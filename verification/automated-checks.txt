@@ -1,0 +1,2 @@
+PASS: JavaScript syntax; 68 public resources; video ranges; private files protected; playback/manual pause/resume/reduced motion/form/assistant; contact validation. Test sender only, no real email or AI request.
+PASS: missing SMTP returns unavailable, never a simulated success.

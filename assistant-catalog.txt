@@ -1,0 +1,402 @@
+Base técnica para orientación de visitantes
+Fuente: NAITEL | Catálogo técnico integral de servicios y base de conocimiento para agente IA, versión 1.0.
+
+01. IDENTIDAD, ALCANCE Y POSICIONAMIENTO
+NAITEL es un integrador de infraestructura tecnológica que atiende el ciclo de vida de soluciones de misión crítica, centros de datos, telecomunicaciones, ciberseguridad, sistemas especiales, energía, plataformas de cómputo y servicios administrados. Su propuesta integra consultoría, levantamiento, ingeniería conceptual y de detalle, suministro sujeto a disponibilidad, integración, instalación, configuración, pruebas, entrega de memoria técnica, capacitación, soporte y mantenimiento mediante alcance contractual. Atendemos proyectos para manufactura, retail, educación, alimentos, gobierno y organizaciones empresariales. La cobertura operativa y la factibilidad de atención deben validarse por ubicación, modalidad y alcance; existe experiencia en Ciudad Juárez, Chihuahua, San Luis Potosí, Querétaro, Monterrey, Hermosillo, y cobertura nacional en mexico, El Paso, Texas, US. Las marcas se presentan como fabricantes/partners autorizados según el portafolio validado; no se prometen niveles de partnership, stock, garantías ampliadas ni certificaciones de instalaciones sin documentación. La acreditación profesional Uptime Institute Accredited Tier Designer (ATD) se comunica como atributo profesional, no como certificación Tier de una instalación ni acreditación universal de toda la empresa.
+OFERTA TRANSVERSAL
+NAITEL también ofrece desarrollo de software a medida, incluidos sistemas ERP, CRM y aplicaciones de checklist para revisiones CTPAT. Esta oferta forma parte de sus servicios además de la integración de infraestructura. Para consultas de desarrollo de software, confirmar que sí se ofrece y preguntar qué proceso necesita gestionar o digitalizar el cliente. El alcance, los módulos, las integraciones, los entregables, el soporte, los costos y los plazos se definen al evaluar cada proyecto. El software de checklist apoya las revisiones CTPAT según los requisitos del cliente; una herramienta por sí sola no acredita ni certifica el cumplimiento.
+Diagnóstico y auditoría de condiciones actuales; definición de requerimientos funcionales, niveles de disponibilidad, capacidad, crecimiento y riesgos; anteproyecto y diseño; ingeniería BIM/CAD y memorias cuando sean contratadas; suministro y logística; ejecución en sitio bajo control de cambios y seguridad industrial; pruebas FAT/SAT, puesta en operación y documentación as-built; pólizas preventivas/correctivas; monitoreo y mejora continua. Los entregables exactos se definen en propuesta y contrato.
+RESTRICCIONES COMERCIALES
+No asegurar tiempos de entrega, precios, inventarios, compatibilidad específica, certificación, nivel Tier, SLA ni soporte 24x7 sin contrato. La frase "podemos evaluar, diseñar o integrar" es diferente de "está incluido". Los servicios sujetos a licencias, fabricantes, obra civil, permisos y subcontratistas deben indicarse.
+
+02. CONSULTORÍA E INGENIERÍA DE CENTROS DE DATOS
+Diseño, modernización y operación de salas de telecomunicaciones, cuartos de equipo, edge rooms y centros de datos empresariales. Se integran disciplinas arquitectónicas, mecánicas, eléctricas, conectividad, seguridad física, monitoreo, protección contra incendio, audiovisuales y operaciones. Se parte de cargas TI reales y proyectadas, criterios de disponibilidad, capacidad de ampliación y tolerancia a mantenimiento.
+ANÁLISIS DE FACTIBILIDAD
+Revisar localización, amenazas naturales, estructura, rutas de acceso, restricciones de carga por losa, acometidas, planta de emergencia, humedad, polvo, corrosión, agua cercana, drenaje, vibración, incendios, seguridad del inmueble, redundancia de operadores y necesidades de personal. Elaborar matriz de riesgos, alternativas, dependencias y supuestos.
+ARQUITECTURA Y DISPONIBILIDAD
+Establecer distribución de espacios, rutas de flujo de equipos y materiales, zonas blancas y de soporte, rutas separadas A/B donde proceda, detección de fugas, accesos, barreras contra incendios y capacidad para mantenimiento. Explicar que Tier I-IV son clasificaciones bajo criterios particulares del Uptime Institute y solo una evaluación/certificación formal permite afirmar nivel certificado. ANSI/TIA-942-C tiene su propio marco; no equiparar automáticamente sistemas de clasificación.
+INGENIERÍA Y DOCUMENTOS
+Planos generales y unifilares, diagramas mecánicos, análisis térmico, distribución de racks, rutas de FO y cobre, balance de cargas, selectividad/coordinación y cortocircuito cuando procedan, plan de monitoreo, matriz de puntos BMS/DCIM, especificaciones técnicas, BOM/BOQ, protocolos de pruebas, análisis de impacto en operación y cronograma de migración.
+NORMATIVA ORIENTATIVA
+ANSI/TIA-942-C; serie ISO/IEC 22237; ASHRAE TC 9.9 y guías de eficiencia energética; NFPA 75; reglamentos y permisos locales, NOM-001-SEDE vigente, NOM-STPS aplicables. Estas referencias no se imponen automáticamente con el mismo carácter jurídico: depende de jurisdicción, contrato y autoridad competente.
+PREGUNTAS DE CALIFICACIÓN
+¿Centro nuevo o ampliación? ¿Cuántos racks y kW actuales y a tres/cinco años? ¿Operación 24x7? ¿Qué mantenimiento se puede tolerar? ¿Existe diagrama unifilar, planos de climatización, carga por rack y evaluación de seguridad? ¿Se exige certificación formal o solo diseño conforme a buenas prácticas?
+
+03. CLIMATIZACIÓN DE PRECISIÓN Y GESTIÓN TÉRMICA
+Sistemas CRAC, CRAH, unidades InRow, expansión directa (DX), agua helada, condensación remota, enfriamiento sensible, free-cooling viable y monitoreo térmico para infraestructura TI. El término aire de precisión refiere control de temperatura, humedad y condiciones operativas con continuidad, no solo a aire acondicionado de confort.
+SELECCIÓN DE ARQUITECTURA
+Comparar DX vs agua helada de acuerdo con tamaño, eficiencia, disponibilidad de agua, refrigerante, altura, exteriores, mantenibilidad, criticidad y CAPEX/OPEX. Valorar redundancia N+1, unidades distribuidas, controles, circuitos, ventiladores EC, intercambio térmico, recirculación y capacidad por evolución de cargas.
+CAPACIDAD Y BALANCE
+El cálculo parte de consumo eléctrico TI, pérdidas eléctricas en sala, iluminación, ocupación, infiltración, envolvente, cargas de humedad y márgenes de crecimiento documentados. No dimensionar toneladas de refrigeración únicamente por metros cuadrados. Distinguir potencia sensible y total, flujo volumétrico, presión disponible y temperatura real de entrada de servidores.
+SETPOINTS Y CONDICIONES
+Monitorear temperaturas de entrada a equipo según clases y recomendaciones de ASHRAE TC 9.9, así como humedad, punto de rocío y presión diferencial; evitar presentar un único setpoint como universal. La temperatura de pasillo o retorno no sustituye la medición de aire de entrada a servidores. Analizar altitud, aire exterior y derating.
+INSTALACIÓN E INTEGRACIÓN
+Coordinar canalizaciones y tuberías, trampas, drenajes, detección de fugas, conexiones de condensado, aislamiento, soportes, vibración, accesibilidad y alimentación A/B según diseño. Integrar señales Modbus/BACnet/SNMP cuando compatibles con BMS o DCIM.
+PRUEBAS Y MANTENIMIENTO
+Pruebas de arranque, secuencia entre unidades, sensores, interlocks con incendio, alarmas, tendencias, cambio de servicio/reserva, fallas simuladas y verificación de flujo en carga representativa. Servicio de filtros, serpentines, ventiladores, drenaje, refrigerante por técnico competente, control y calibraciones. Evitar manipulación de refrigerante sin cumplimiento aplicable.
+DIAGNÓSTICO ORIENTATIVO DE ALARMAS
+Para "low suction pressure" o "critical cooling failure" de un InRow, recomendar levantar modelo, históricos, presión y temperatura registradas, estado de filtros/serpentines, ventiladores, condiciones de carga, válvulas y fallas asociadas; nunca recomendar puentear protecciones ni recargar refrigerante a ciegas. Escalar si se compromete refrigeración de la sala.
+PREGUNTAS DE CALIFICACIÓN
+¿Potencia TI sensible kW? ¿Distribución rack y pasillos? ¿Temperaturas de entrada observadas? ¿Unidades existentes, refrigerante y edad? ¿Historial de alarmas? ¿Hay agua helada o condensadoras disponibles? ¿Se exige redundancia y mantenimiento en operación?
+
+04. CONTENCIÓN DE PASILLO FRÍO Y CALIENTE
+Integración de puertas, panelería, techos modulares, barreras, cepillos, blanking panels, gabinetes, controles de acceso a pasillo y coordinación con incendios para separar corrientes de aire y reducir recirculación y mezcla. Soluciones de CPI, Hoffman, Panduit y fabricantes compatibles, según ingeniería aprobada.
+PASILLO FRÍO Y CALIENTE
+Contención de pasillo frío (CAC) encierra suministro al frente de racks; contención de pasillo caliente (HAC) encierra retorno al dorso. La selección depende de distribución, sistemas de aire, sprinkler/supresión, alturas, mantenimiento, luminarias, sensores y renovación prevista. La orientación de equipos y paneles ciegos es crítica.
+CRITERIOS Y SEGURIDAD
+Verificar alturas y claros de puertas, circulación y evacuación, capacidad estructural y sismo, segregación de rutas, detección/descarga de agente, rociadores aplicables y mecanismos de liberación de paneles o puertas. No instalar techos de contención sin coordinación con autoridad de incendios y responsable de protección.
+COMISIONAMIENTO
+Medir aire a entrada de rack a distintas alturas, temperatura de retorno, presión y puntos calientes; registrar condiciones antes/después cuando viable. La contención mejora el control de flujo, pero no implica ahorro garantizado ni reemplaza cálculo de capacidad de refrigeración.
+PREGUNTAS
+¿Número y dimensiones de racks? ¿Disposición de frentes? ¿Se alimenta por piso falso, techo o InRow? ¿Qué supresión/detección existe? ¿Se prevé expansión de filas?
+
+05. PISO FALSO, BASES Y OBRA COMPLEMENTARIA
+Diseño e implementación de piso técnico elevado para distribución de aire o canalizaciones, con opciones de paneles antiestáticos, pedestales, travesaños, recubrimientos y soluciones de carga específicas. No se debe asumir que todo centro de datos requiere piso falso.
+ESPECIFICACIONES
+Definir altura útil, carga concentrada, distribuida y rodante, deflexión, resistencia sísmica, continuidad equipotencial según diseño, acabado antiestático apropiado, resistencia al fuego, control de polvo y compatibilidad con humedad y operación.
+COORDINACIÓN
+Revisar perforaciones, pasacables, rejillas, compuertas, aislamiento de fugas, pasarelas, rampas, peldaños, recorridos de mantenimiento, cargas de UPS y racks. Evitar mezclar cables de potencia y comunicaciones sin distancias/barreras aplicables.
+RECEPCIÓN
+Validar nivelación, verticalidad, fijaciones, cargas admisibles del sistema elegido, identificación de paneles especiales, sellos, acceso a plenum y limpieza final con materiales compatibles con TI.
+PREGUNTAS
+¿El piso distribuirá aire o solo cables? ¿Altura disponible y carga máxima de equipo? ¿Existe estudio estructural? ¿Hay riesgos de agua debajo de piso?
+
+06. GABINETES, RACKS, PDUS Y ACCESORIOS
+Suministro y montaje de gabinetes para servidores, telecomunicaciones, networking y edge, abiertos/cerrados, profundidad y capacidad definidas, puertas perforadas, bandejas, organizadores, paneles ciegos, sensores y distribución eléctrica en rack.
+INGENIERÍA MECÁNICA
+Evaluar formato 19 pulgadas, U útiles, profundidad usable, ancho, capacidad estática/dinámica, fijación, ventilación, radio de curvatura, puertas, acceso lateral, cerraduras, paso de cableado, compatibilidad con kits de rieles y centro de gravedad.
+ENERGÍA EN RACK
+PDU básicos, medidos o conmutables con monitoreo por toma según modelo; balanceo de fases, tensión/corriente, capacidad de circuito, conectores IEC/NEMA, diferenciación A/B, etiquetado, circuitos derivados y revisión de protecciones. La PDU no reemplaza diseño eléctrico ni UPS.
+GESTIÓN Y MONITOREO
+Sensores de temperatura, humedad, puertas y agua; SNMP v3 preferente, MIBs y OIDs verificados por modelo/firmware, Syslog/API si disponibles, alarmas, umbrales, gráficos e inventario integrado a DCIM. Nunca prometer telemetría si la unidad no incorpora interfaz o licencia.
+PREGUNTAS
+¿Gabinetes de 42/45/48 U u otra medida? ¿Tipo/peso de equipos? ¿Potencia por rack? ¿Puertas, contención y sensores? ¿Conexiones eléctricas nacionales o IEC?
+
+07. PROTECCIÓN CONTRA INCENDIO CON AGENTES LIMPIOS
+Soluciones de detección temprana, alarma, control y supresión mediante agente limpio para recintos tecnológicos donde sea aplicable. Un "agente limpio" no debe describirse como inocuo en cualquier concentración o condición; la seguridad humana depende de agente, concentración de diseño, tiempo de exposición, ocupación, evacuación, productos de descomposición y requisitos del fabricante y normas.
+SELECCIÓN DE AGENTE
+Comparar FK-5-1-12, HFC-227ea y gases inertes como IG-541/IG-55/IG-100 según disponibilidad legal/comercial, sostenibilidad, características del recinto, presión de almacenamiento, volumen de cilindros, seguridad de ocupantes y condiciones del proyecto. Evitar presentar "Novec 1230" como disponibilidad garantizada: es una marca comercial histórica y deben verificarse fabricantes, suministro y alternativa certificada. Considerar cambios regulatorios de gases fluorados y potencial de calentamiento global.
+ARQUITECTURA
+Detección puntual, aspiración de humo cuando proceda, panel listado, señales audiovisuales, estaciones de aborto y descarga manual según ingeniería, temporizaciones, interlocks, parada de aire requerido, sellos de pasos, cilindros, boquillas y tubería calculada por software homologado por fabricante. La arquitectura de doble confirmación (cross-zone) depende del diseño y la autoridad.
+CÁLCULO Y RECINTO
+Se requiere volumetría real incluyendo piso falso/techo cuando sean parte del volumen protegido, temperatura extrema, altitud, porcentaje de fugas, tiempo de retención, presión de descarga, resistencia del recinto, paneles de alivio de presión cuando procedan y ocupación. El ensayo de integridad de recinto (door fan test) debe considerarse según estándar y contrato.
+NORMAS Y RECEPCIÓN
+NFPA 2001:2025 para agentes limpios; NFPA 72 para alarma/detección; NFPA 75 para TI; NFPA 76 para telecom cuando corresponda; NOM-002-STPS-2010 y protección civil y reglamentos locales. Validar equipos y componentes listados, compatibilidad, plan de evacuación, pruebas sin descarga cuando proceda y aceptación de autoridad.
+MANTENIMIENTO Y SEGURIDAD
+Inspección de cilindros, presión/peso según sistema, soportes, boquillas sin obstrucción, alarmas, baterías, secuencia de activación, condición de sellos, panel, conexión al BMS y documentación. Únicamente personal autorizado debe intervenir sistemas armados. Ante descarga o falla no instruir rearmado improvisado.
+PREGUNTAS
+¿Dimensiones y altura del cuarto, piso falso y plafón? ¿Cuántas personas trabajan dentro? ¿Hay detección existente? ¿Condiciones de hermeticidad? ¿Desean agente halocarbonado o inerte? ¿Requieren cálculo, montaje, pruebas y mantenimiento?
+
+08. SISTEMAS DE ENERGÍA CRÍTICA Y CALIDAD DE ENERGÍA
+Diseño, integración y mantenimiento de UPS, tableros, circuitos, ATS, bypass de mantenimiento, banco de baterías, monitoreo, supresión de sobretensiones, puesta a tierra y coordinación de protecciones para TI y operación esencial. Marcas del portafolio incluyen Schneider Electric, Chicago Digital Power (CDP), CyberPower y Eaton según selección y disponibilidad.
+POTENCIAS UPS
+Soluciones orientativas en capacidades nominales de 1, 2, 3, 5, 10, 20, 30, 50 y superiores a 100 kVA, sujetas a modelos comercialmente disponibles. Diferenciar VA/kVA de W/kW, factor de potencia, eficiencia, sobrecarga, topología, fase de entrada/salida, distorsión, comunicaciones y autonomía. No asumir que todos los tamaños se ofrecen con los mismos modelos o garantías.
+TOPOLOGÍAS
+Line-interactive y on-line doble conversión según criticidad; UPS monofásicos y trifásicos; paralelo redundante y distribuido; bypass estático y externo; integración con generador, ATS, tablero esencial y cargas A/B. Verificar compatibilidad UPS-generador y tiempos de transferencia/reenganche sin simplificaciones.
+DIMENSIONAMIENTO
+Inventario detallado de cargas kW/kVA, crecimiento, inrush, PF, armónicos, corrientes de fuga, autonomía requerida en minutos, temperatura del banco, ciclos, tolerancia a paro, ambiente, altitud, selectividad y redundancia. La autonomía real depende de curva de batería, envejecimiento, temperatura y carga, no solo de etiqueta de minutos.
+BATERÍAS
+VRLA, plomo abierto, litio y otras compatibles con producto; evaluar BMS, vida/ciclos, ventilación, separación, contención, riesgo térmico, reciclaje y requisitos de protección de incendios. Evaluar NFPA 855 y códigos aplicables para almacenamiento electroquímico según umbrales y contexto; no trasladar automáticamente criterios de instalaciones estadounidenses a México.
+CALIDAD DE ENERGÍA
+Estudios de perfil de tensión, continuidad, caídas, flicker, distorsión armónica, transitorios, desequilibrio, factor de potencia, neutro y tierra, con analizadores y ventanas representativas. Seleccionar soluciones sin atribuir causas sin mediciones.
+NORMATIVA Y SEGURIDAD
+NOM-001-SEDE-2012 vigente según catálogo oficial consultado, NOM-029-STPS-2011, NOM-022-STPS-2015 cuando aplique, NOM-002-STPS-2010, disposiciones de protección civil, reglamentos locales y criterios NFPA 70/70E, IEC 62040 cuando sean especificados. Los trabajos eléctricos requieren personal competente, bloqueo/etiquetado y permisos aplicables.
+PRUEBAS Y ENTREGA
+Prueba de puesta en marcha, polaridad/fases, protecciones, registro de cargas, autonomía contractual controlada, transferencia de bypass, recuperación, alertas y comunicación; protocolo de mantenimiento y reporte fotográfico; no efectuar descarga profunda sin autorización y evaluación de riesgo.
+PREGUNTAS
+¿Carga en W/kW y kVA? ¿Monofásico/trifásico y voltaje? ¿Cuántos minutos de respaldo? ¿Hay generador? ¿Disponibilidad requerida y espacio para baterías? ¿Cuándo fue el último mantenimiento y cambio de baterías?
+
+09. PLANTAS DE EMERGENCIA Y TRANSFERENCIA
+Ingeniería y coordinación para generadores diésel, gas u otras tecnologías, tableros ATS, distribución de emergencia y supervisión remota; dimensionamiento conforme a cargas críticas, picos de arranque, secuencia de entrada y condiciones ambientales.
+DISEÑO
+Determinar kW/kVA, factor de potencia, altitud y temperatura para derating, inrush de motores, UPS con rectificadores, pasos de carga, régimen standby/prime conforme al fabricante, emisiones, acústica, almacenamiento y calidad de combustible, ventilación, gases de escape, cuarto y bases.
+OPERACIÓN Y PRUEBAS
+Verificación ATS, arranque automático, precalentamiento, batería de arranque, cargador, sensores, alarmas, retorno a red, ciclos de prueba y prueba con banco de carga según plan. Coordinar con UPS para continuidad durante transición, sin suponer "cero interrupción" si la topología no lo garantiza.
+CUMPLIMIENTO
+Analizar instalaciones eléctricas y de combustible, seguridad laboral, ruido, emisiones, protección civil y permisos municipales/ambientales aplicables. Las regulaciones ambientales dependen del equipo, combustible, lugar y autoridad; confirmar por proyecto.
+MANTENIMIENTO
+Rutinas de inspección, filtros, lubricación, refrigerante, correas, batería, combustible, ATS y registros de horas/arranques; planes de abastecimiento y respuesta a fallas. No sugerir pruebas bajo carga sin controles de seguridad.
+PREGUNTAS
+¿Cuántos kW críticos? ¿Qué equipos tienen corriente de arranque elevada? ¿Tiempo previsto de autonomía de combustible? ¿Ubicación interior/exterior? ¿Existen restricciones ambientales/acústicas?
+
+10. CABLEADO ESTRUCTURADO DE COBRE
+Planeación, ingeniería, instalación y certificación de enlaces de datos para redes empresariales, industriales y telecom, categorías 6 y 6A, para puestos, AP Wi-Fi, cámaras IP, control de accesos, telefonía y equipos OT cuando corresponda. Marcas Panduit, CommScope y Belden según diseño.
+DISEÑO
+Levantamiento MDF/IDF, topología estrella, cantidades por área, reservas, rutas horizontales, cuartos de telecomunicaciones, canalizaciones, condiciones EMI, integración a racks, trayectorias, protección mecánica, segregación de potencia y requerimientos PoE. Elegir Cat6/Cat6A por aplicaciones, alcance, densidad y temperatura del cableado.
+DISTANCIA Y CONECTIVIDAD
+La arquitectura convencional de cobre de 4 pares considera típicamente hasta 90 m de enlace permanente y hasta 100 m de canal con cordones, sujeto a estándar, aplicación y componentes. Verificar parámetros de canal cuando hay enlaces especiales, MPTL o equipos industriales; nunca garantizar 10 GbE en cualquier canal Cat6 sin evaluar longitud y condiciones.
+POE
+IEEE 802.3af/at/bt según necesidad, potencia entregada, presupuesto de switch, disipación en mazos, AWG, conexiones, certificación y caída de tensión. Comparar switch PoE vs inyectores considerando tomas, UPS, patch cords, potencia, administración y mantenimiento; el costo energético depende de eficiencias reales.
+INSTALACIÓN Y PRUEBAS
+Conservar radio de curvatura y fuerza de tiro, evitar destrenzado excesivo, no deformar cable con cinchos, preservar apantallamiento cuando aplica, separar rutas y etiquetar extremos. Certificación con equipo calibrado y límites adecuados a categoría/clase: wiremap, longitud, pérdida de inserción, NEXT/PSNEXT, ACR-F, retorno y demás parámetros del estándar. Entregar archivos originales de certificación, reporte de fallas corregidas y mapa de puertos.
+NORMAS
+ANSI/TIA-568 serie vigente aplicable, ANSI/TIA-569 para espacios y canalizaciones, ANSI/TIA-606 para administración, ANSI/TIA-607 para bonding/puesta a tierra telecom, ISO/IEC 11801-1 y BICSI como referencias de diseño/instalación. Verificar ediciones y adopción contractual.
+PREGUNTAS
+¿Cuántas salidas y su uso? ¿Cat6 para usuarios y Cat6A para APs? ¿Se requieren enlaces industriales? ¿Qué distancias y tipo de canalización? ¿Existe certificación de todos los enlaces?
+
+11. FIBRA ÓPTICA INTERNA Y EXTERNA
+Infraestructura multimodo OM3/OM4/OM5 cuando tenga sentido, monomodo OS2 y conectividad MPO/MTP, LC y otras interfaces autorizadas; enlaces troncales MDF-IDF, backbone campus, data center, plantas internas y externas. Selección basada en óptica, distancia, ancho de banda, presupuesto óptico y crecimiento, no solo en distancia.
+INGENIERÍA ÓPTICA
+Definir número de hilos presentes y futuros, velocidades Ethernet y transceptores, tramos internos/externos, ductos, bandejas, ODF, fibras de reserva, continuidad, rutas alternativas y diversidad física. OM4 suele emplearse en enlaces de menor alcance con ópticas multimodo compatibles; OS2 aporta alcance y evolución pero la decisión exige especificaciones de transceptores.
+MEDIOS E INSTALACIÓN
+Cable tight buffer, loose tube, armados/dieléctricos, interiores LSZH/OFNR/OFNP según requisito y jurisdicción; empalme por fusión, conectores, casetes, pigtails, paneles, bandejas y protección contra tensión/curvatura. Verificar compatibilidad de medios y conectores; no mezclar UPC/APC sin diseño.
+PRUEBAS Y ACEPTACIÓN
+Inspección y limpieza de conectores, OLTS pérdida de inserción y polaridad, OTDR bidireccional o en las longitudes de onda pertinentes según plan; interpretar reflectancia y eventos; relacionar presupuesto de pérdida de enlace con equipo óptico. Entregar trazas nativas, mediciones, mapa de hilos, registro de empalmes, etiquetas y diagrama as-built.
+PLANTA EXTERNA
+Revisar ductería, accesos, cámaras, canalización aérea/subterránea, derechos de vía, cruces, protección ambiental, penetraciones cortafuego, altura de postes, puesta a tierra de elementos metálicos cuando corresponda y permisos. El alcance exacto depende de infraestructura existente y autorizaciones.
+NORMAS
+ANSI/TIA-568.3, ANSI/TIA-598 para códigos de color cuando aplique, ISO/IEC 11801, IEC 60793/60794, buenas prácticas BICSI y requisitos de obra/canalización locales. Verificar versiones vigentes y especificaciones contractuales.
+PREGUNTAS
+¿Cuántos IDF y distancia real? ¿10/25/40/100 GbE y ópticas? ¿6, 12, 24, 48 hilos o más? ¿FO existente? ¿Rutas redundantes? ¿Se requiere certificación OLTS y OTDR?
+
+12. REDES LAN, CAMPUS, DATA CENTER Y SD-WAN
+Diseño e integración de switching L2/L3, segmentación VLAN, enlaces 1/10/25/40/100GbE cuando aplicables, enrutamiento, redundancia, QoS, multicast, NAC e interconexión de sedes. Portafolio adaptable a Cisco, Aruba/HPE y otras plataformas autorizadas.
+ARQUITECTURA
+Topología acceso/distribución/core o diseño colapsado, dimensionamiento de backplane y uplinks, PoE, stacking/MLAG/virtual chassis según fabricante, protocolos de loop avoidance, agregación de enlaces, OSPF/BGP cuando aplicables y políticas de ruta. La redundancia precisa evaluar puntos únicos de falla reales.
+SEGMENTACIÓN
+Separar usuarios, invitados, IoT, CCTV, servidores, administración, OT, voz y backups mediante VLAN/VRF/ACL/firewall según criticidad. VLAN no equivale a firewall ni impide por sí sola tráfico entre segmentos si el enrutamiento lo permite.
+WIRELESS
+Levantamiento predictivo y medición en sitio, cobertura y capacidad, SNR, interferencia, canalización, bandas 2.4/5/6 GHz según soporte normativo/equipo, roaming, WPA3/802.1X, densidad, PoE y montajes industriales. No garantizar capacidad de usuarios por AP sin estudio de tráfico y RF.
+SD-WAN
+Seleccionar bajo disponibilidad de WAN, SLA de aplicaciones, rutas, cifrado, control centralizado, links MPLS/Internet/LTE según caso y failover; distinguir SD-WAN de respaldo físico real.
+ENTREGA
+HLD/LLD, direccionamiento, matriz VLAN/ACL, topología lógica y física, backups de configuración, versiones firmware, pruebas de failover, mapas Wi-Fi y métricas base.
+PREGUNTAS
+¿Usuarios, sedes, switches, puertos y dispositivos PoE? ¿Aplicaciones sensibles? ¿Separación OT/IT? ¿Hay enlaces redundantes y necesidad de Wi-Fi industrial?
+
+13. CIBERSEGURIDAD, FIREWALLS Y ACCESO SEGURO
+Fortinet/FortiGate, Palo Alto, Cisco y ecosistemas compatibles para seguridad perimetral, microsegmentación, VPN, filtrado web/DNS, seguridad de aplicaciones, IDS/IPS, MFA, ZTNA/SASE según licenciamiento y arquitectura.
+DESCUBRIMIENTO Y RIESGO
+Inventario de activos, flujos, clasificación de información, exposición externa, configuración de identidades, accesos privilegiados, respaldos, requisitos regulatorios, amenazas de ransomware y continuidad. Priorizar conforme a impacto del negocio.
+FIREWALL Y POLÍTICAS
+Revisión de reglas con mínimo privilegio, interfaces/zones, NAT/VIP, SD-WAN, IPS/AV/URL según licencias, inspección TLS con evaluación legal/privacidad, logging y alta disponibilidad. Configuración específica de puertos y reglas se valida por aplicación; nunca abrir acceso administrativo público como solución predeterminada.
+ACCESO REMOTO
+VPN IPSec/SSL según producto/versión y endurecimiento, certificados, MFA, postura de dispositivo, grupos y perfiles, georrestricciones cuando útiles, revisión de cuentas y logs. Establecer retiro de accesos y control de terceros.
+SEGURIDAD DE ENDPOINT E IDENTIDAD
+Integración con Active Directory/Entra ID, políticas de privilegios, EDR/XDR, DNS seguro, parcheo, hardening, backups inmutables cuando proceda, segregación de administradores y recuperación comprobada. Una herramienta sola no constituye seguridad completa.
+SOC Y RESPUESTA
+Definir alcance de monitoreo, retención de registros, fuentes, playbooks, severidad, escalamiento, evidencia forense y continuidad, con intervención autorizada. Para incidentes activos, no divulgar indicadores sensibles ni recomendar borrar evidencia; escalar a equipo de respuesta.
+NORMAS
+ISO/IEC 27001:2022 con Amd 1:2024, ISO/IEC 27002, NIST CSF 2.0, NIST SP 800-53/800-61 como guías cuando apliquen, obligaciones de protección de datos y requerimientos sectoriales como TISAX/CTPAT/OEA si fueron contractual o legalmente exigidos.
+PREGUNTAS
+¿Cuántos usuarios/sedes? ¿Firewall modelo y licencias? ¿Accesos remotos y servicios expuestos? ¿Existen backup inmutable, MFA, EDR, segmentación OT/IT y política de incidentes?
+
+14. CCTV Y VIDEOVIGILANCIA IP
+Soluciones de diseño, modernización y soporte para videovigilancia IP, VMS, grabación, almacenamiento, analítica y operación. Fabricantes y plataformas: Axis, Hanwha Vision, Hikvision, Honeywell, Milestone XProtect y Genetec cuando se confirme en alcance. La integración de marcas depende de compatibilidad certificada y licencias.
+ESTUDIO DE NECESIDAD
+Definir propósito: detección, observación, reconocimiento o identificación con criterios DORI/IEC 62676 y evidencias requeridas. Localizar perímetros, accesos, estacionamientos, producción, almacenes, rampas, casetas y zonas críticas; determinar iluminación, contraluz, vandalismo, polvo, humedad, privacidad y cobertura de puntos ciegos.
+CÁMARAS Y ÓPTICA
+Domos, bullets, PTZ, multisensor, panorámicas 180/360, térmicas o especializadas según situación; sensor, resolución, focal, FOV, WDR, sensibilidad nocturna, IR, analítica edge y protección IK/IP según modelo. No elegir por megapíxeles únicamente; se calcula densidad de pixeles en objetivo.
+VMS Y SERVIDORES
+Compatibilidad de cámaras y device packs con Milestone/Genetec, número de canales, drivers, edge recording/failover si disponibles, clientes, federación y permisos. Hardware según perfil de ingestión, decodificación, analítica, RAID y retención. No prometer compatibilidad de versiones ni licencias sin matriz de fabricante.
+RETENCIÓN Y ALMACENAMIENTO
+Estimar por bitrate promedio medido o modelado, códec H.264/H.265/AV1 cuando exista soporte integral, FPS, resolución, complejidad de escena, grabación continua vs eventos, audio, redundancia y margen; aclarar TB decimal vs TiB. Retención de 30, 35, 45, 60 días o más es requisito acordado, no obligación general automática.
+RED
+VLAN CCTV, QoS apropiada, PoE, uplinks, multicast donde aplique, firmware soportado, TLS, perfiles seguros, sincronización NTP, segregación y firewall. Evitar publicar puertos de cámaras/NVR a Internet; usar acceso seguro.
+ANALÍTICA
+Merodeo, intrusión, cruce de línea, permanencia, conteo, matrículas o clasificación requieren evaluación de escena, FPS, orientación, altura, luz y licencias; ninguna analítica tiene precisión garantizada universal y debe probarse con escenarios representativos.
+PRIVACIDAD Y CUMPLIMIENTO
+Avisos de privacidad y finalidad legítima, minimización, controles de acceso, retención, bitácoras, tratamiento de datos y solicitudes legales según LFPDPPP vigente para particulares. CTPAT/OEA y requerimientos del cliente pueden justificar diseño de cámaras y retenciones particulares: el chatbot no debe afirmar una retención obligatoria única.
+PRUEBAS Y DOCUMENTACIÓN
+Plano de cámaras, IP y credenciales entregadas de forma segura, perfiles, posiciones y FOV, grabación/reproducción, exportación con integridad, respaldo de configuración, listado de licencias, pruebas diurnas/nocturnas, failover y reporte de aceptación.
+PREGUNTAS
+¿Número de cámaras, áreas y objetivo de vigilancia? ¿VMS existente? ¿Días de retención y FPS? ¿Grabación continua o por evento? ¿Red y almacenamiento actuales? ¿Requiere auditoría diaria y analítica?
+
+15. CONTROL DE ACCESOS, IDENTIDAD FÍSICA E INTRUSIÓN
+Diseño, instalación y mantenimiento de control de accesos para puertas, torniquetes, esclusas, casetas y áreas restringidas, usando plataformas LenelS2, Honeywell y Rosslare según compatibilidad/modelo; posibilidad de integración VMS/alarma cuando se valide API y licencias.
+ARQUITECTURA
+Lectores RFID, OSDP preferible donde exista soporte, credenciales móviles o biométricas bajo justificación legal, controladoras, entradas/salidas supervisadas, cerraduras magnéticas/electromecánicas, contacto de puerta, botón REX, fuente y respaldo, gabinete y servidor/software de gestión.
+SEGURIDAD DE VIDA
+Coordinar puertas de evacuación, liberación por emergencia, incendios, falla de energía y códigos aplicables. Nunca recomendar instalar cerradura que impida egreso seguro; selección fail-safe/fail-secure depende de puerta y normatividad.
+GESTIÓN
+Roles, horarios, antipassback si requerido, visitantes, credenciales, doble factor para áreas críticas, eventos, auditorías y expiración de permisos; segregación de administradores y retención de evidencias.
+PROTECCIÓN DE DATOS
+Control de accesos almacena datos personales; biometría requiere análisis reforzado de necesidad, proporcionalidad, seguridad y bases legales. No almacenar templates o fotografías sin controles y aviso correspondiente.
+MANTENIMIENTO
+Prueba de lectores, sensores, supresión de ruido eléctrico, alimentación, respaldo, baterías, registros, firmware, comunicación y maniobra de apertura normal/emergencia; entregar matriz de puertas y pruebas.
+PREGUNTAS
+¿Número de puertas y personal? ¿Puertas contra incendio o de emergencia? ¿Sistema existente y modelo de controladora? ¿Requieren integración con RR.HH./CCTV, visitantes o elevadores?
+
+16. SISTEMAS ESPECIALES E INTEGRACIÓN
+Integración controlada de detección de intrusión, alarmas, sensores ambientales, comunicaciones de emergencia, voceo industrial, interfonía, BMS, supervisión de incendios y sistemas electrónicos complementarios. La compatibilidad debe comprobarse entre plataformas, protocolos, integradores y licencias.
+VOCEO Y AUDIO INDUSTRIAL
+Análisis de ruido de fondo, inteligibilidad STI/STIPA cuando corresponda, distribución de bocinas, potencia, zonas, amplificador, procesamiento DSP, microfonía y prioridad de llamadas; considerar protección auditiva y señalización. En entornos de 92 dB, una propuesta requiere medición, simulación/ensayo y validación de niveles; no basta aumentar volumen indiscriminadamente.
+BMS Y AUTOMATIZACIÓN
+BACnet, Modbus, SNMP, APIs y protocolos admitidos por equipos; puntos de monitoreo, lectura vs escritura, autorizaciones, alarmas y tendencias. Niagara Framework puede ser plataforma de integración en proyectos elegibles, sujeto a controladores, licencias y drivers.
+SEGREGACIÓN
+Para sistemas de vida y seguridad, la integración con software general no debe anular independencia de controles y certificaciones exigidas. Eventos críticos requieren rutas y lógica supervisadas.
+PREGUNTAS
+¿Qué subsistemas desean integrar? ¿Fabricante/versiones y documentación API? ¿Solo supervisión o control? ¿Qué alarma debe escalar y a quién?
+
+17. SERVIDORES, ALMACENAMIENTO E HIPERCONVERGENCIA
+Diseño y suministro de soluciones rack/tower/blade y almacenamiento local/SAN/NAS, virtualización y plataformas hiperconvergentes de Dell Technologies, HPE, Lenovo, Cisco y Nutanix donde oferta, compatibilidad y licencias lo permitan.
+DIMENSIONAMIENTO
+Inventario de aplicaciones, vCPU, memoria comprometida/real, CPU p95, IOPS, latencia, almacenamiento útil, crecimiento, reservas de HA, cargas SQL/ERP/VMS, licencias por core y requisitos de soporte. No dimensionar solo por número de máquinas virtuales.
+ALMACENAMIENTO
+RAID 1/5/6/10 según perfil y tamaño, SSD/HDD/NVMe, caché, hot spare, discos enterprise, controladores, paths redundantes, snapshots y replicación; RAID y snapshots no sustituyen backup. Considerar reconstrucción y riesgo con discos de alta capacidad.
+HIPERCONVERGENCIA
+Nodos HCI, cómputo+almacenamiento distribuido, tolerancia a fallos, red de backend, witness/quórum, escalado, suscripciones/licenciamiento y compatibilidad de hardware; calcular capacidad usable después de resiliencia, reserva y compresión realista.
+VIRTUALIZACIÓN
+Hyper-V y plataformas compatibles según suscripción, clusters, live migration, redes virtuales, switches redundantes, storage, copias de seguridad application-aware, restauración por VM y por objeto, y DR documentado. Validar compatibilidad de guest OS y aplicaciones.
+SEGURIDAD Y CONTINUIDAD
+Firmware y drivers validados, iDRAC/iLO, MFA/segmentación, respaldos fuera de dominio administrativo, cifrado, arranque seguro/TPM cuando viable, monitoreo y acceso limitado a consolas. Identificar RPO y RTO realistas por carga.
+ENTREGA
+HLD/LLD, matriz de hosts, configuración storage/red, inventario de licencias, métricas benchmark, reporte de firmware, backups probados y plan de soporte.
+PREGUNTAS
+¿Qué aplicaciones y VMs? ¿Windows/Linux? ¿Disponibilidad y RTO/RPO? ¿Crecimiento 3-5 años? ¿Capacidad útil y rendimiento? ¿Modelo de soporte y presupuesto?
+
+18. RESPALDOS, RECUPERACIÓN Y CONTINUIDAD
+Políticas de respaldo de servidores, VMs, bases de datos, archivos, SaaS y configuraciones de red, más recuperación ante desastre. La protección de datos se establece por objetivos de negocio, no por un calendario genérico.
+EVALUACIÓN
+Clasificar servicio crítico y dependencia (identidad, DNS, red, almacenamiento, SQL, IIS, VMS), definir RPO/RTO medidos, ventanas de respaldo, volumetría, frecuencia de cambio, retención y obligaciones legales/contractuales.
+DISEÑO
+Estrategias 3-2-1-1-0 como referencia práctica (copias, medios, fuera de sitio, copia aislada/inmutable y pruebas sin errores), repositorios separados de dominio, cifrado, claves custodias, cuentas mínimas, protección de consola y monitoreo diario. El modelo exacto debe adaptarse.
+APLICACIONES
+Backups coherentes con aplicación para SQL, AD y sistemas transaccionales; coordinar VSS/log truncation y cadena de logs. Replicación sola no evita corrupción lógica o ransomware; snapshots no reemplazan recuperación.
+PRUEBAS
+Restauraciones periódicas controladas por archivo, VM, base de datos y servicio integral; documentar resultado, tiempos reales, dependencias, punto recuperado y acciones correctivas. Una tarea marcada "éxito" no prueba recuperabilidad.
+PREGUNTAS
+¿Qué sistemas no pueden detenerse? ¿Cuánto dato pueden perder y cuánto tardar en volver? ¿Existe segundo sitio o cloud? ¿Pruebas recientes de restauración? ¿Requisitos de retención?
+
+19. LICENCIAMIENTO Y PRODUCTIVIDAD EMPRESARIAL
+Asesoría de licenciamiento, suministro y administración de soluciones Microsoft y Autodesk, así como Minitab u otras plataformas cuando se validen contratos de distribución y productos autorizados.
+MICROSOFT
+Microsoft 365, Office, Windows, Windows Server, SQL Server, CALs y servicios Azure según necesidades; revisar usuarios, dispositivos, cores, virtualización, movilidad, suscripciones, compromisos y condiciones de Product Terms aplicables. No equiparar Microsoft 365 Business Standard con seguridad avanzada o derechos ilimitados de servidor.
+AUTODESK
+AutoCAD, Revit, Civil 3D y suites según uso real, licencias por usuario o acuerdos específicos, administración de identidades, reasignación, renovaciones, auditoría y compatibilidad de versiones. La disponibilidad y precio se verifican en cotización.
+GOBERNANZA
+Inventario, reconciliación de licencias vs uso, alta/baja de usuarios, MFA, reglas de compartición de cuenta, presupuesto de renovación y protección de datos en nube. No prometer ahorro sin revisar contratos vigentes.
+PREGUNTAS
+¿Cuántos usuarios/dispositivos? ¿Producto y edición actual? ¿Renovación? ¿Se requieren correo, Office, CAD, nube, SQL, acceso remoto o virtualización?
+
+20. SOPORTE DE CÓMPUTO PERSONAL Y MESA DE AYUDA
+Soporte preventivo/correctivo de estaciones de trabajo, portátiles, periféricos, impresoras, sistemas operativos y herramientas de colaboración, con gestión de activos, tickets, SLA y control de evidencia.
+ALCANCE
+Inventario, diagnóstico, hardware y garantía, despliegue de imagen, actualizaciones, antivirus/EDR, configuración AD/Entra, respaldo de usuario autorizado, restauración, conectividad, soporte remoto/presencial según plan y ciclo de vida de equipo.
+MESA DE SERVICIO
+Portal, catálogo de solicitudes/incidencias, prioridad por impacto/urgencia, aprobaciones, asignación, SLA por tipo, estados, notificaciones, evidencias, encuesta de satisfacción, escalamiento, cierre aprobado y reportes por cliente/tecnología/tiempo. Integrar prácticas ITIL como guía, sin afirmar certificación.
+SEGURIDAD
+Acceso remoto consensuado, mínimo privilegio, consentimiento para tratamiento de información, cadena de custodia cuando procede, borrado seguro verificado al retiro de discos y políticas de datos. No solicitar contraseñas por chat.
+PREGUNTAS
+¿Cuántos usuarios/equipos y sedes? ¿Horario de soporte? ¿Soporte en sitio, remoto o híbrido? ¿SLA objetivo? ¿Herramientas y plataforma de tickets existentes?
+
+21. SERVICIOS ADMINISTRADOS Y PÓLIZAS
+Contratos de gestión continua para CCTV, energía, UPS, infraestructura, centros de datos, redes, seguridad y sistemas especiales. Se ofrecen en modalidades preventivas, correctivas, monitoreo y mejoras planificadas; condiciones de disponibilidad y atención se concretan en contrato.
+NIVELES DE SERVICIO
+Inventario por activo y ubicación, criticidad, ventana de cobertura, tiempo de acuse, tiempo objetivo de atención, tiempos de solución condicionados por causa y refacciones, exclusiones, disponibilidad de técnico, stock, acceso a sitio y escalamiento. Evitar confundir respuesta, restauración y resolución definitiva.
+PROGRAMA DE MANTENIMIENTO
+Plan calendarizado basado en fabricante y entorno; para UPS revisar alarmas, conexiones, condición de batería; para CCTV limpieza, enfoque, grabación/retención, firmware; para aire filtros, evaporación, sensores; para redes backups, vulnerabilidades y redundancia. Frecuencia y pruebas se acuerdan.
+INDICADORES
+Disponibilidad definida, MTTA, MTTR, cumplimiento SLA, incidentes recurrentes, estado de respaldos, estado de cámaras, capacidad disponible, tickets por categoría, tendencias ambientales y planes de corrección.
+EXCLUSIONES TÍPICAS
+Repuestos no incluidos, siniestros, vandalismo, licencias vencidas, cambios de alcance, obras civiles y trabajos eléctricos mayores, acceso imposible a instalaciones, fallas de proveedores terceros, consumibles y eventos de fuerza mayor salvo contratación expresa.
+PREGUNTAS
+¿Cuántos activos, marcas y sitios? ¿Turnos y criticidad? ¿Refacciones incluidas? ¿Se desea mesa de ayuda y reportes mensuales? ¿Hay documentación previa y accesos autorizados?
+
+22. MONITOREO, DCIM, TELEMETRÍA Y REPORTERÍA
+Centralización de alarmas de infraestructura con SNMP, APIs, syslog, Modbus/BACnet y herramientas de monitoreo/visualización compatibles, incluyendo paneles Grafana/Prometheus o soluciones DCIM empresariales según proyecto.
+VARIABLES
+Consumo de PDU/UPS kW/kWh, tensión y corriente por fase, autonomía y alarmas de batería, temperaturas/humedad de racks, fuga de agua, puertas, estado HVAC, utilización de enlaces, SNMP de dispositivos, jobs de respaldo, capacidad de almacenamiento y salud de VMS.
+INGENIERÍA
+Descubrimiento de hardware, matrices MIB/OID por modelo, pruebas de conectividad, permisos read-only, SNMPv3, NTP, frecuencia de muestreo, conservación de históricos, baselines, alarmas anticiclo y ruta de escalamiento.
+TABLEROS
+Indicadores por centro, sala, rack, disciplina, cliente y severidad; correlación con cambios, ticketing y ventanas de mantenimiento. Evitar declarar PUE exacto si faltan mediciones comparables de energía TI y total con metodología consistente.
+PREGUNTAS
+¿Qué marcas/modelos y protocolos existen? ¿Monitoreo local o multi-sitio? ¿Qué alarmas importan y quién las atiende? ¿Existe herramienta actual?
+
+23. GESTIÓN DE PROYECTOS Y ASEGURAMIENTO DE CALIDAD
+Gobierno integral del ciclo de implementación bajo criterios de alcance, tiempo, costo, riesgo, calidad, seguridad y comunicación. Aplicable a proyectos multidisciplinares en manufactura y centros de datos activos.
+PLANEACIÓN
+Acta de proyecto, alcance/exclusiones, EDT/WBS, calendario, ruta crítica, hitos, comité de cambios, matriz de riesgos, permisos, EHS, interesados y plan de comunicación.
+INGENIERÍA Y SUMINISTRO
+Revisión de planos, fichas, submittals, BOM aprobada, trazabilidad de equipos, control de revisiones, inspección recepción, logística, FAT, calidad de instalación y coordinación con operaciones del cliente.
+EJECUTAR SIN INTERRUMPIR
+Método de trabajo, permisos en altura y eléctricos, bloqueo/etiquetado, MOP/SOP/EOP, rollback, ventana autorizada, condiciones de go/no-go y comunicación de incidentes. La prioridad es proteger personal y continuidad.
+CIERRE
+SAT/IST cuando contratado, punch list, capacitación, actas, planos as-built, garantías aplicables, respaldos de configuración, certificados y resultados de pruebas, manuales, inventario y aceptación.
+PREGUNTAS
+¿Existe ingeniería previa? ¿Tiempo máximo de paro? ¿Requisitos de seguridad industrial y acceso a planta? ¿Quién autoriza cambios? ¿Cuáles son criterios de aceptación?
+
+24. NORMATIVIDAD, REGLAMENTACIÓN Y BUENAS PRÁCTICAS
+Las normas citadas son un mapa de consulta, no una declaración indiscriminada de cumplimiento o obligatoriedad. El equipo técnico debe confirmar edición vigente, jurisdicción, contrato, uso, autoridad competente y listado de productos antes de emitir diseño definitivo.
+MÉXICO: ELECTRICIDAD Y SEGURIDAD LABORAL
+NOM-001-SEDE-2012 instalaciones eléctricas (el portal oficial de Normalización la registra vigente a noviembre de 2026); NOM-029-STPS-2011 mantenimiento eléctrico; NOM-002-STPS-2010 incendios; NOM-001-STPS-2008 edificios; NOM-009-STPS-2011 altura; NOM-022-STPS-2015 electricidad estática; NOM-017-STPS aplicable en materia de EPP, verificando versión; NOM-020-STPS para recipientes a presión cuando corresponda; normas y reglamentos municipales/estatales y Protección Civil. No convertir referencias generales en dictamen de cumplimiento.
+INFRAESTRUCTURA TI Y TELECOM
+ANSI/TIA-942-C (2024); ANSI/TIA-568, 569, 606, 607, 758 según medio/alcance; ISO/IEC 11801 y 22237; IEC 60793/60794 fibra; IEEE 802.3 Ethernet/PoE y 802.11 Wi-Fi; manuales de fabricante y buenas prácticas BICSI. Las ediciones particulares de normas TIA distintas de 942 se verifican en contrato.
+INCENDIOS Y AMBIENTE
+NFPA 2001:2025 agentes limpios; NFPA 75:2024 protección áreas TI; NFPA 72 detección/alarma; NFPA 76 telecom; NFPA 70/70E, NFPA 855 si aplicable; regulación mexicana de emisiones, refrigerantes, residuos, seguridad industrial y permisos; indicaciones de ingeniería y autoridad local.
+INFORMACIÓN Y DATOS
+ISO/IEC 27001:2022/Amd 1:2024; ISO/IEC 27002; NIST CSF 2.0; Ley Federal de Protección de Datos Personales en Posesión de los Particulares publicada 20/03/2025 y reformada 14/11/2025; Ley General aplicable a sujetos obligados cuando corresponda; requisitos CTPAT/OEA/TISAX/ISO 9001 o sectoriales solo en casos pertinentes.
+LIMITACIONES
+Cumplir una norma técnica de referencia, disponer de profesional ATD o vender productos listados no equivale a certificación oficial del proyecto, certificación legal o validación por autoridad competente. La IA puede explicar referencia y alcance, no emitir dictámenes.
+
+26. INTENCIONES, RESPUESTAS Y PREGUNTAS FRECUENTES
+Respuestas modelo para que el asistente mantenga calidad homogénea; deben adaptarse a la consulta, no recitarse mecánicamente.
+¿DISEÑAN UN DATACENTER COMPLETO?
+Sí, podemos evaluar y desarrollar una solución integral desde la ingeniería conceptual hasta integración de aire de precisión, energía, gabinetes, contención, cableado, supresión, seguridad y monitoreo, con entregables y pruebas definidos por proyecto. Para orientar el diseño necesito saber cuántos racks o kW requiere, en qué ciudad se ubica y qué disponibilidad busca.
+¿QUÉ SIGNIFICA UN CENTRO DE DATOS TIER III?
+Tier III corresponde a la categoría de mantenibilidad concurrente dentro del marco de Uptime Institute. Que un diseño persiga esos atributos no significa que el edificio esté certificado; el proceso formal de certificación es distinto y debe contratarse/validarse expresamente.
+¿ES INOCUO EL AGENTE LIMPIO?
+Los agentes limpios están destinados a extinguir sin residuos significativos sobre equipos, pero no todos son inocuos para personas bajo cualquier condición. Se realiza cálculo de concentración, ocupación, evacuación y seguridad según agente y norma. Requiere ingeniería especializada.
+¿CÓMO CALCULAN UN UPS?
+Partimos de la carga real en kW/kVA, fases, factor de potencia, crecimiento, autonomía, tipo de batería, redundancia y coordinación eléctrica. Puedo explicar opciones de 1 a más de 100 kVA, pero el modelo definitivo requiere un análisis de cargas y condiciones del sitio.
+¿CAT6 O CAT6A?
+Cat6 es común para conexiones estándar; Cat6A ofrece margen mejor definido para 10GBASE-T a 100 m en canal correctamente implementado y aporta ventajas en ciertos despliegues PoE/Wi-Fi. Se decide por velocidad futura, distancias, densidad, entorno e inversión. Podemos combinar categorías en distintas áreas de un mismo proyecto.
+¿OM4 U OS2?
+OM4 es multimodo útil con transceptores apropiados en numerosos enlaces internos de menor alcance. OS2 es monomodo favorable para distancias y evolución de velocidades. La elección depende de ópticas, distancia, pérdidas y costo total de transceptores/infraestructura; podemos especificar ambos medios en un mismo proyecto.
+¿PUEDEN CONSERVAR MI VMS?
+Es posible evaluar continuidad o integración con Milestone y otras plataformas, pero compatibilidad, licencias y soporte dependen de versión, cámaras, drivers y almacenamiento. Solicitaremos inventario y requerimientos de retención para verificarlo.
+¿CUÁNTOS DÍAS PUEDEN GRABAR?
+El tiempo se dimensiona según cantidad de cámaras, bitrate, FPS, resolución, códec, modalidad de grabación y capacidad útil. Podemos diseñar metas como 35, 45 o 60 días si son factibles, con almacenamiento y redundancia adecuados.
+¿OFRECEN MONITOREO Y PÓLIZAS?
+Sí, evaluamos mantenimiento y operación continua de infraestructura tecnológica y sistemas especiales. Horarios, cobertura, refacciones, tiempos de respuesta y reportes se definen en contrato según criticidad y distribución geográfica.
+¿SON PARTNERS OFICIALES?
+El portafolio comprende fabricantes autorizados en las disciplinas indicadas por NAITEL. La condición exacta por fabricante, producto y territorio se confirma al ofertar. La acreditación ATD se presenta por separado como credencial profesional.
+¿CUÁL ES EL PRECIO?
+Para una referencia comercial necesitamos al menos alcance, cantidad/capacidad, ubicación y condiciones de instalación; no dar cifras no verificadas como si fueran cotización. Podemos preparar levantamiento, anteproyecto o propuesta formal en MXN una vez validados datos.
+¿PUEDEN ATENDER EN OTRA CIUDAD?
+Evaluamos proyectos en diferentes localidades de México y capacidad de atención en ciudades de experiencia operativa. Debe confirmarse disponibilidad de personal, logística, seguridad de acceso y alcance antes de ofrecer fechas.
+
+27. CASOS DE USO MULTIDISCIPLINARIOS
+Ejemplos conceptuales de conversación que demuestran cómo combinar disciplinas sin inventar resultados de proyectos o testimonios.
+SALA TI INDUSTRIAL DE 8 RACKS
+Se evalúan cargas por gabinete y crecimiento, AC de precisión con redundancia dimensionada, distribución A/B donde aplique, racks y PDU medidos, cableado Cat6A/OS2 u OM4 según transceptores, detección temprana y supresión calculada, control de acceso, CCTV y monitoreo ambiental. Datos faltantes: energía disponible, kW por rack, ventanas de mantenimiento, protección contra incendio y espacio.
+PLANTA MANUFACTURERA CON 200 CÁMARAS
+Se define cobertura DORI por zona, mezcla óptica, enlaces PoE y fibra troncales, cálculo de bitrate y almacenamiento útil, VMS/licencias/retención, ciberseguridad y controles de acceso; se diseña un plan de pruebas en operación, monitoreo y mantenimiento, evitando garantizar analíticas sin piloto.
+RENOVACIÓN DE UPS 30 KVA
+Se audita carga, tensión, autonomía, topología, bypass, baterías, tamaño físico, ventilación, disyuntores, coordinación con planta, mantenimiento y migración; se plantea sustitución con rollback y pruebas aprobadas, no cambio improvisado.
+CAMPUS CON 11 IDF
+Se diseñan troncales OS2/OM4 según alcance/ópticas y diversidad, cableado cobre Cat6/Cat6A, switches de acceso con PoE, uplinks y redundancia, etiquetado, certificación de FO y cobre, matrices de puertos, planos y plataforma de monitoreo.
+PROGRAMA DE SERVICIOS ADMINISTRADOS
+Se realiza inventario y criticidad por activos; matriz de mantenimiento de UPS, aire, CCTV, VMS, red y supresión; niveles de atención, dashboard, tickets y revisiones con el cliente. Contrato especifica exclusiones y refacciones.
+
+29. GLOSARIO TÉCNICO Y LÍMITES DE INTERPRETACIÓN
+Definiciones para búsqueda semántica y respuestas consistentes.
+MISIÓN CRÍTICA
+Sistema cuyo fallo puede afectar operación, seguridad, producción o continuidad. La criticidad la define el impacto del cliente, no el nombre de un producto.
+N, N+1, 2N
+N capacidad suficiente mínima; N+1 incorpora unidad adicional; 2N implica dos sistemas capaces de sostener carga según arquitectura. La disponibilidad integral depende de rutas, mantenimiento y fallas comunes.
+PUE
+Relación de energía total de instalación a energía de TI con frontera y período claramente definidos. No es un índice de certificación Tier.
+CRAC/CRAH/INROW
+CRAC: unidad de aire acondicionado para sala; CRAH: unidad manejadora que normalmente usa agua helada; InRow: ubicación cercana/entre racks; las variantes específicas dependen del fabricante.
+UPS Y ATS
+UPS mantiene alimentación durante ciertos eventos con electrónica y almacenamiento; ATS conmuta entre fuentes y usualmente no elimina por sí solo la interrupción de transferencia.
+RPO/RTO
+RPO: máxima pérdida de datos aceptable en tiempo; RTO: tiempo objetivo de recuperación del servicio.
+RAID
+Mecanismo de protección/distribución de discos que no reemplaza copia de seguridad ni protege por sí solo ante borrado malicioso.
+MDF/IDF
+Distribuidor principal e intermedio de telecomunicaciones, terminología habitual; la nomenclatura de espacios según estándares puede variar.
+OM4/OS2
+Categorías de fibra multimodo optimizada y monomodo, respectivamente; compatibilidad se define por transceptor y aplicación.
+DORI
+Detección, observación, reconocimiento e identificación; guía de detalle mínimo de imagen para propósito de vigilancia, no garantía de éxito analítico.
+VMS/NVR
+VMS plataforma de gestión de video; NVR grabador de video en red. Alcances y licencias varían.
+SAT/FAT/IST
+Prueba de aceptación en sitio, prueba en fábrica e integrated systems testing; su inclusión y rigor se establece contractualmente.
+BMS/DCIM
+BMS supervisa sistemas de edificio; DCIM gestiona información y capacidad de infraestructura física de datacenter, según funcionalidad real.
+POE Y PRESUPUESTO
+Suministro de potencia por Ethernet y suma de capacidad eléctrica disponible en switch; revisar norma, inyectores, cableado y carga.

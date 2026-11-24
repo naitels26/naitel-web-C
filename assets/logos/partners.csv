@@ -1,0 +1,40 @@
+marca,logo,categoria_es,categoria_en,alto_logo,pais_origen
+Cisco,cisco.svg,Redes y ciberseguridad,Networking & cybersecurity,40,US
+Fortinet,fortinet.svg,Redes y ciberseguridad,Networking & cybersecurity,20,US
+Palo Alto Networks,palo-alto.svg,Redes y ciberseguridad,Networking & cybersecurity,24,US
+SonicWall,sonicwall.svg,Redes y ciberseguridad,Networking & cybersecurity,20,US
+HPE Aruba Networking,hpe-aruba-networking.svg,Redes y ciberseguridad,Networking & cybersecurity,26,US
+Ekahau,ekahau.png,Redes y ciberseguridad,Networking & cybersecurity,25,FI
+Schneider Electric,schneider-electric.svg,Energía crítica,Critical power,42,FR
+Eaton,eaton.svg,Energía crítica,Critical power,20,US
+Chicago Digital Power (CDP),cdp-azul.png,Energía crítica,Critical power,31,US
+Panduit,panduit.svg,Cableado estructurado,Structured cabling,19,US
+CommScope,commscope.png,Cableado estructurado,Structured cabling,21,US
+Belden,belden.svg,Cableado estructurado,Structured cabling,18,US
+Axis Communications,axis.svg,Videovigilancia,Video surveillance,29,SE
+Milestone Systems,milestone.png,Videovigilancia,Video surveillance,26,DK
+Hikvision,hikvision.svg,Videovigilancia,Video surveillance,22,CN
+Hanwha Vision,hanwha-vision.svg,Videovigilancia,Video surveillance,36,KR
+MOBOTIX,mobotix.svg,Videovigilancia,Video surveillance,24,DE
+Chatsworth Products (CPI),cpi.svg,Infraestructura de centros de datos,Data center infrastructure,35,US
+Rittal,rittal.svg,Infraestructura de centros de datos,Data center infrastructure,36,DE
+Dell Technologies,dell-technologies.svg,Cómputo y almacenamiento,Compute & storage,21,US
+Hewlett Packard Enterprise (HPE),hpe.svg,Cómputo y almacenamiento,Compute & storage,22,US
+Microsoft,microsoft.svg,Nube y software,Cloud & software,22,US
+Microsoft Azure,azure.svg,Nube y software,Cloud & software,26,US
+Amazon Web Services (AWS),aws.svg,Nube y software,Cloud & software,30,US
+Logitech,logitech.svg,Colaboración y pantallas,Collaboration & displays,24,CH
+Samsung,samsung.svg,Colaboración y pantallas,Collaboration & displays,16,KR
+Genetec,genetec.svg,Videovigilancia,Video surveillance,25,CA
+Hoffman,hoffman.svg,Infraestructura de centros de datos,Data center infrastructure,32,US
+AMD,amd.svg,Cómputo y almacenamiento,Compute & storage,26,US
+SanDisk,sandisk.svg,Cómputo y almacenamiento,Compute & storage,25,US
+Honeywell,honeywell.svg,Seguridad y automatización,Security & automation,24,US
+CyberPower,cyberpower.png,Energía crítica,Critical power,26,TW
+HUAWEI,huawei.svg,Redes y ciberseguridad,Networking & cybersecurity,32,CN
+Lenovo,lenovo.svg,Cómputo y almacenamiento,Compute & storage,24,CN
+QNAP,qnap.svg,Cómputo y almacenamiento,Compute & storage,25,TW
+Synology,synology.svg,Cómputo y almacenamiento,Compute & storage,26,TW
+H3C,h3c.png,Redes y ciberseguridad,Networking & cybersecurity,26,CN
+ASUS,asus.svg,Cómputo y almacenamiento,Compute & storage,24,TW
+

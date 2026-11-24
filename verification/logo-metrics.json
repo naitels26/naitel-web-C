@@ -1,0 +1,306 @@
+{
+  "cisco.svg": {
+    "width": 576,
+    "height": 304,
+    "x": 0,
+    "y": 0,
+    "visibleWidth": 576,
+    "visibleHeight": 304
+  },
+  "fortinet.svg": {
+    "width": 2731,
+    "height": 331,
+    "x": 9,
+    "y": 10,
+    "visibleWidth": 2714,
+    "visibleHeight": 312
+  },
+  "palo-alto.svg": {
+    "width": 928,
+    "height": 173,
+    "x": 1,
+    "y": 0,
+    "visibleWidth": 927,
+    "visibleHeight": 173
+  },
+  "sonicwall.svg": {
+    "width": 2731,
+    "height": 467,
+    "x": 15,
+    "y": 13,
+    "visibleWidth": 2701,
+    "visibleHeight": 440
+  },
+  "hpe-aruba-networking.svg": {
+    "width": 2107,
+    "height": 480,
+    "x": 2,
+    "y": 2,
+    "visibleWidth": 2102,
+    "visibleHeight": 476
+  },
+  "ekahau.png": {
+    "width": 1843,
+    "height": 786,
+    "x": 234,
+    "y": 169,
+    "visibleWidth": 1375,
+    "visibleHeight": 382
+  },
+  "schneider-electric.svg": {
+    "width": 2551,
+    "height": 1163,
+    "x": 94,
+    "y": 94,
+    "visibleWidth": 2363,
+    "visibleHeight": 975
+  },
+  "eaton.svg": {
+    "width": 926,
+    "height": 255,
+    "x": 1,
+    "y": 1,
+    "visibleWidth": 924,
+    "visibleHeight": 253
+  },
+  "cdp-azul.png": {
+    "width": 320,
+    "height": 320,
+    "x": 16,
+    "y": 106,
+    "visibleWidth": 288,
+    "visibleHeight": 107
+  },
+  "panduit.svg": {
+    "width": 363,
+    "height": 80,
+    "x": 0,
+    "y": 2,
+    "visibleWidth": 362,
+    "visibleHeight": 78
+  },
+  "commscope.png": {
+    "width": 1920,
+    "height": 262,
+    "x": 0,
+    "y": 0,
+    "visibleWidth": 1913,
+    "visibleHeight": 253
+  },
+  "belden.svg": {
+    "width": 1427,
+    "height": 307,
+    "x": 16,
+    "y": 16,
+    "visibleWidth": 1400,
+    "visibleHeight": 280
+  },
+  "axis.svg": {
+    "width": 533,
+    "height": 192,
+    "x": 0,
+    "y": 0,
+    "visibleWidth": 533,
+    "visibleHeight": 192
+  },
+  "milestone.png": {
+    "width": 4173,
+    "height": 743,
+    "x": 0,
+    "y": 0,
+    "visibleWidth": 4173,
+    "visibleHeight": 743
+  },
+  "hikvision.svg": {
+    "width": 2731,
+    "height": 365,
+    "x": 10,
+    "y": 10,
+    "visibleWidth": 2711,
+    "visibleHeight": 345
+  },
+  "hanwha-vision.svg": {
+    "width": 481,
+    "height": 377,
+    "x": 0,
+    "y": 0,
+    "visibleWidth": 481,
+    "visibleHeight": 377
+  },
+  "mobotix.svg": {
+    "width": 15246,
+    "height": 2325,
+    "x": 0,
+    "y": 0,
+    "visibleWidth": 15246,
+    "visibleHeight": 2325
+  },
+  "cpi.svg": {
+    "width": 683,
+    "height": 128,
+    "x": 2,
+    "y": 1,
+    "visibleWidth": 672,
+    "visibleHeight": 126
+  },
+  "rittal.svg": {
+    "width": 1501,
+    "height": 2048,
+    "x": 0,
+    "y": 0,
+    "visibleWidth": 1501,
+    "visibleHeight": 2048
+  },
+  "dell-technologies.svg": {
+    "width": 192,
+    "height": 25,
+    "x": 0,
+    "y": 0,
+    "visibleWidth": 192,
+    "visibleHeight": 25
+  },
+  "hpe.svg": {
+    "width": 1680,
+    "height": 480,
+    "x": 96,
+    "y": 0,
+    "visibleWidth": 1584,
+    "visibleHeight": 480
+  },
+  "microsoft.svg": {
+    "width": 900,
+    "height": 192,
+    "x": 0,
+    "y": 0,
+    "visibleWidth": 900,
+    "visibleHeight": 192
+  },
+  "azure.svg": {
+    "width": 1067,
+    "height": 307,
+    "x": 1,
+    "y": 0,
+    "visibleWidth": 1066,
+    "visibleHeight": 307
+  },
+  "aws.svg": {
+    "width": 811,
+    "height": 485,
+    "x": 4,
+    "y": 2,
+    "visibleWidth": 803,
+    "visibleHeight": 481
+  },
+  "logitech.svg": {
+    "width": 2667,
+    "height": 811,
+    "x": 2,
+    "y": 1,
+    "visibleWidth": 2663,
+    "visibleHeight": 809
+  },
+  "samsung.svg": {
+    "width": 18804,
+    "height": 2880,
+    "x": 0,
+    "y": 0,
+    "visibleWidth": 18804,
+    "visibleHeight": 2880
+  },
+  "genetec.svg": {
+    "width": 269,
+    "height": 51,
+    "x": 0,
+    "y": 0,
+    "visibleWidth": 267,
+    "visibleHeight": 50
+  },
+  "hoffman.svg": {
+    "width": 1858,
+    "height": 563,
+    "x": 0,
+    "y": 0,
+    "visibleWidth": 1858,
+    "visibleHeight": 563
+  },
+  "amd.svg": {
+    "width": 64,
+    "height": 16,
+    "x": 0,
+    "y": 0,
+    "visibleWidth": 64,
+    "visibleHeight": 16
+  },
+  "sandisk.svg": {
+    "width": 64,
+    "height": 13,
+    "x": 0,
+    "y": 0,
+    "visibleWidth": 64,
+    "visibleHeight": 13
+  },
+  "honeywell.svg": {
+    "width": 6667,
+    "height": 1259,
+    "x": 0,
+    "y": 0,
+    "visibleWidth": 6667,
+    "visibleHeight": 1259
+  },
+  "cyberpower.png": {
+    "width": 433,
+    "height": 80,
+    "x": 0,
+    "y": 0,
+    "visibleWidth": 433,
+    "visibleHeight": 80
+  },
+  "huawei.svg": {
+    "width": 64,
+    "height": 48,
+    "x": 0,
+    "y": 0,
+    "visibleWidth": 64,
+    "visibleHeight": 48
+  },
+  "lenovo.svg": {
+    "width": 64,
+    "height": 22,
+    "x": 0,
+    "y": 0,
+    "visibleWidth": 64,
+    "visibleHeight": 22
+  },
+  "qnap.svg": {
+    "width": 64,
+    "height": 11,
+    "x": 0,
+    "y": 0,
+    "visibleWidth": 64,
+    "visibleHeight": 11
+  },
+  "synology.svg": {
+    "width": 64,
+    "height": 17,
+    "x": 0,
+    "y": 0,
+    "visibleWidth": 64,
+    "visibleHeight": 17
+  },
+  "h3c.png": {
+    "width": 362,
+    "height": 98,
+    "x": 0,
+    "y": 0,
+    "visibleWidth": 362,
+    "visibleHeight": 98
+  },
+  "asus.svg": {
+    "width": 64,
+    "height": 13,
+    "x": 1,
+    "y": 0,
+    "visibleWidth": 62,
+    "visibleHeight": 13
+  }
+}

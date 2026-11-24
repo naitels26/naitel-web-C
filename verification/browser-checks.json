@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-24",
+  "viewports": ["320x568", "390x844", "768x1024", "1440x900", "844x390"],
+  "slidesPerViewport": 10,
+  "horizontalOverflowFailures": 0,
+  "checks": [
+    "Manual next pauses automatic advancement and exposes Resume label",
+    "Assistant suggestions disappear at compact height; input and send remain within viewport",
+    "Assistant local answer is explicitly labelled as site information",
+    "Energy contact opens form with reason=energy and name field focused",
+    "General diagnostic CTA opens contact form",
+    "Brand pause toggles aria-pressed",
+    "Spanish and English navigation and form labels",
+    "No broken loaded images",
+    "No console warnings or errors in final page review",
+    "Mobile map flows vertically; landscape map heading starts below header"
+  ],
+  "limits": [
+    "Reduced motion tested by isolated playback/carousel logic and CSS checks; OS preference was not changed",
+    "No physical iOS/Android virtual-keyboard session",
+    "No production SMTP email or Gemini response tested"
+  ]
+}

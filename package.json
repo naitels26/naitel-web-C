@@ -1,0 +1,12 @@
+{
+  "name": "naitel-version-c",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "nodemailer": "10.4.0"
+  },
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node verify-site.mjs"
+  }
+}

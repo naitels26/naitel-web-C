@@ -1,0 +1,9 @@
+PROCEDENCIA DE NUEVOS LOGOTIPOS
+Genetec: https://commons.wikimedia.org/wiki/File:Genetec_logo.svg
+Hoffman: https://www.nvent.com/themes/custom/particle/dist/app-drupal/assets/images/logo-hoffman.svg
+Honeywell: https://cdn.worldvectorlogo.com/logos/honeywell-1.svg
+CyberPower: https://dl4jz3rbrsfum.cloudfront.net/images/logos/cp-white.png
+H3C: https://www.h3c.com/en/tres/NewWebUI/2025/images/new/highly-logo.png
+AMD, SanDisk, HUAWEI, Lenovo, QNAP, Synology y ASUS: Simple Icons (CC0), https://simpleicons.org/ — archivos SVG del paquete simple-icons distribuido por jsDelivr. Se ajustó el viewBox al dibujo para evitar márgenes excesivos.
+Los logotipos conservan los derechos de marca de sus respectivos titulares.
+
