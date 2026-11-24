@@ -49,6 +49,18 @@ function json(response, status, body) {
 }
 
 async function readJsonRequest(request) {
+  // Vercel may provide a parsed body after consuming the request stream.
+  try {
+    const parsed = request.body;
+    if (parsed !== undefined) {
+      const text = typeof parsed === 'string' || Buffer.isBuffer(parsed)
+        ? parsed.toString() : JSON.stringify(parsed);
+      if (Buffer.byteLength(text) > 16384) return { error: 413 };
+      return { body: JSON.parse(text) };
+    }
+  } catch {
+    return { error: 400 };
+  }
   const chunks = [];
   let size = 0;
   for await (const chunk of request.iterator({ destroyOnReturn: false })) {
@@ -209,7 +221,7 @@ async function serveFile(request, response, pathname) {
   stream.pipe(response);
 }
 
-export function createLandingServer({
+export function createLandingHandler({
   apiKey = process.env.GEMINI_API_KEY,
   model = process.env.GEMINI_MODEL || flashLiteModel,
   fetcher = fetch,
@@ -221,7 +233,7 @@ export function createLandingServer({
   const requests = new Map();
   const contactRequests = new Map();
   const referenceCache = new Map();
-  return createServer(async (request, response) => {
+  return async (request, response) => {
     try {
       const pathname = new URL(request.url, 'http://localhost').pathname;
       const isContact = pathname === '/api/contact';
@@ -304,7 +316,11 @@ export function createLandingServer({
       if (!response.headersSent && !response.destroyed) json(response, 400, { error: 'invalid_request' });
       else response.destroy();
     }
-  });
+  };
+}
+
+export function createLandingServer(options) {
+  return createServer(createLandingHandler(options));
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

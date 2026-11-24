@@ -1,5 +1,13 @@
 # NAITEL — Versión C
 
+## Despliegue en Vercel
+
+`vercel.json` prepara `public/` con las tres páginas y los recursos permitidos; los videos se sirven como archivos estáticos. `api/index.mjs` exporta el handler del chat y contacto sin abrir un puerto. La función incluye explícitamente el HTML y el catálogo que necesita al arrancar. El servidor local continúa funcionando con `Iniciar.cmd`.
+
+Vercel ejecuta `node prepare-vercel.mjs` y publica `public/`. Configurar `GEMINI_API_KEY` y las variables SMTP en Vercel para habilitar esos servicios. Sin ellas, las APIs devuelven 503 y la página sigue disponible. No subir archivos `.env`.
+
+Verificar con `node verify-site.mjs` y `node verify-vercel.mjs`. La segunda comprobación valida el paquete estático y el cuerpo de las solicitudes tal como lo entrega Vercel, con correo e IA simulados únicamente dentro de la prueba.
+
 Versión independiente creada a partir de A. No requiere las carpetas A, B ni comparador. Mantiene HTML/CSS/JavaScript, Node y Nodemailer; no agrega dependencias. Se copiaron los recursos y la dependencia instalada de A, el catálogo y los logotipos reales de B y su carrusel, adaptado a C.
 
 ## Abrir
