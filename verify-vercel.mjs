@@ -16,6 +16,7 @@ for (const name of ['.env', 'server.mjs', 'contact-mail.mjs', 'assistant-catalog
 }
 assert.deepEqual((await readdir(new URL('./public/', import.meta.url))).sort(), ['assets', 'cookies.html', 'index.html', 'privacidad.html']);
 assert.ok(config.functions['api/index.mjs'].includeFiles.includes('assistant-catalog.txt'));
+assert.equal(typeof config.functions['api/index.mjs'].includeFiles, 'string', 'Vercel requires a glob string, not an array');
 
 let contacts = 0;
 const route = createLandingHandler({

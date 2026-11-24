@@ -6,7 +6,7 @@
   "functions": {
     "api/index.mjs": {
       "maxDuration": 30,
-      "includeFiles": ["index.html", "assistant-catalog.txt"]
+      "includeFiles": "{index.html,assistant-catalog.txt}"
     }
   },
   "rewrites": [
