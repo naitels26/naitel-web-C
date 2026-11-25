@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#061322" />
   <meta name="description" content="NAITEL | Conectividad, infraestructura de misión crítica, ciberseguridad OT y segmentación." />
+  <script src="assets/consent.js"></script>
   <title>NAITEL | Mission-Critical Technology</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -119,7 +120,7 @@
       <video class="media" muted loop playsinline preload="none" aria-hidden="true" poster="assets/contact-v14.webp"><source src="assets/contact-v14.webm" type="video/webm"></video>
       <div class="shade"></div>
       <div class="slide-content"><div class="contact-layout">
-        <div class="copy contact-copy"><div class="direct-contact"><a href="tel:+528001886248">MX 800 188 6248</a><a href="mailto:aleon@naitel.com">aleon@naitel.com</a></div>
+        <div class="copy contact-copy"><div class="direct-contact"><a href="tel:+528001886248">MX 800 188 6248</a><a href="mailto:ventas@naitel.com">ventas@naitel.com</a></div>
           <p class="eyebrow" data-i18n="eightEyebrow">Contacto</p>
           <h2 data-i18n="eightTitle">Hablemos de tu proyecto</h2>
           <div class="accent"></div>
@@ -221,7 +222,8 @@
     <button type="button" class="slide-side-arrow slide-side-previous" data-slide-step="-1" aria-label="Diapositiva anterior"><span aria-hidden="true">&lt;</span></button>
     <button type="button" class="slide-side-arrow slide-side-next" data-slide-step="1" aria-label="Diapositiva siguiente"><span aria-hidden="true">&gt;</span></button>
     <footer class="footer-ui">
-      <div class="footer-details"><a class="footer-privacy" href="privacidad.html" data-privacy-notice data-i18n="privacyLink" aria-haspopup="dialog" aria-controls="privacyDialog">Aviso de privacidad</a></div>
+      <div class="footer-contact"><a href="tel:+528001886248">800 188 6248</a><span aria-hidden="true">·</span><a href="mailto:ventas@naitel.com">ventas@naitel.com</a></div>
+      <div class="footer-details"><a class="footer-privacy" href="privacidad.html" data-privacy-notice data-i18n="privacyLink" aria-haspopup="dialog" aria-controls="privacyDialog">Aviso de privacidad</a><button type="button" class="footer-privacy cookie-settings-open" data-i18n="cookieSettings">Configurar cookies</button></div>
       <section class="logo-carousel" aria-label="Marcas aliadas"><div class="logo-carousel-content"><ul class="logo-carousel-list" id="carouselLogos" role="list"></ul><p id="logoCarouselMessage" role="status" hidden></p></div></section>
     </footer>
   </main>
@@ -281,10 +283,19 @@
       <a href="cookies.html" target="_blank" rel="noopener" data-i18n="cookieBannerLink">Leer el aviso de cookies</a>
     </div>
     <div class="cookie-actions">
+      <button type="button" class="cookie-secondary cookie-settings-open" data-i18n="cookieSettings">Configurar cookies</button>
       <button type="button" class="cookie-secondary" id="cookieReject" data-i18n="cookieReject">Solo esenciales</button>
       <button type="button" class="cookie-primary" id="cookieAccept" data-i18n="cookieAccept">Aceptar opcionales</button>
     </div>
   </aside>
+  <dialog class="cookie-dialog" id="cookieDialog" aria-labelledby="cookieDialogTitle">
+    <div class="cookie-dialog-heading"><h2 id="cookieDialogTitle" data-i18n="cookieSettings">Configurar cookies</h2><button type="button" id="cookieClose" aria-label="Cerrar / Close">×</button></div>
+    <p data-i18n="cookieIntro">Elija qué tecnologías permite. Puede cambiar su decisión en cualquier momento.</p>
+    <label class="cookie-option"><input type="checkbox" checked disabled><span><strong data-i18n="cookieEssentialTitle">Esenciales · Siempre activas</strong><small data-i18n="cookieEssentialText">Guardan su elección y permiten el funcionamiento del sitio y del formulario.</small></span></label>
+    <label class="cookie-option"><input type="checkbox" id="cookieAdvertising"><span><strong data-i18n="cookieAdsTitle">Publicidad · Google Ads</strong><small data-i18n="cookieAdsText">Permite a Google Ads medir campañas y personalizar publicidad. Desactivada hasta que usted la acepte.</small></span></label>
+    <a href="cookies.html" id="cookieNoticeLink" data-i18n="cookieBannerLink">Consultar aviso de cookies</a>
+    <div class="cookie-actions"><button type="button" class="cookie-secondary" id="cookieSave" data-i18n="cookieSave">Guardar preferencias</button><button type="button" class="cookie-primary" id="cookieAcceptAll" data-i18n="cookieAccept">Aceptar opcionales</button></div>
+  </dialog>
   <script type="application/json" id="assistantReferenceTitles">
     {
       "ups":{"es":"Sistema de alimentación ininterrumpida","en":"Uninterruptible power supply"},
@@ -339,8 +350,8 @@
       contactSentTitle:'Solicitud enviada',
       contactSent:'Un consultor se pondrá en contacto con usted.',
       contactInvalid:'Revisa los datos del formulario e inténtalo de nuevo.',
-      contactUnavailable:'El envío desde la página no está disponible en este momento. Puedes escribir a aleon@naitel.com.',
-      contactFailed:'No pudimos confirmar el envío. Puedes intentar de nuevo o escribir a aleon@naitel.com.',
+      contactUnavailable:'El envío desde la página no está disponible en este momento. Puedes escribir a ventas@naitel.com.',
+      contactFailed:'No pudimos confirmar el envío. Puedes intentar de nuevo o escribir a ventas@naitel.com.',
       contactLimited:'Se alcanzó el límite de solicitudes. Espera un minuto y vuelve a intentarlo.'
     });
     Object.assign(i18n.en, {
@@ -375,16 +386,18 @@
       contactSentTitle:'Inquiry sent',
       contactSent:'A consultant will contact you.',
       contactInvalid:'Check the form details and try again.',
-      contactUnavailable:'Sending from the website is currently unavailable. You can email aleon@naitel.com.',
-      contactFailed:'We could not confirm the delivery. You can try again or email aleon@naitel.com.',
+      contactUnavailable:'Sending from the website is currently unavailable. You can email ventas@naitel.com.',
+      contactFailed:'We could not confirm the delivery. You can try again or email ventas@naitel.com.',
       contactLimited:'The request limit has been reached. Wait a minute and try again.'
     });
     Object.assign(i18n.es, {
+      cookieSettings:'Configurar cookies',cookieIntro:'Elija qué tecnologías permite. Puede cambiar su decisión en cualquier momento.',cookieEssentialTitle:'Esenciales · Siempre activas',cookieEssentialText:'Guardan su elección y permiten el funcionamiento del sitio y del formulario.',cookieAdsTitle:'Publicidad · Google Ads',cookieAdsText:'Permite a Google Ads medir campañas y personalizar publicidad. Desactivada hasta que usted la acepte.',cookieSave:'Guardar preferencias',
       cookieBannerTitle:'Su privacidad importa',
       cookieBannerText:'Guardamos sus preferencias en este navegador. Google Ads solo se carga si acepta las tecnologías opcionales.',
       cookieBannerLink:'Consultar aviso de cookies',cookieReject:'Solo esenciales',cookieAccept:'Aceptar opcionales'
     });
     Object.assign(i18n.en, {
+      cookieSettings:'Cookie settings',cookieIntro:'Choose which technologies to allow. You can change your decision at any time.',cookieEssentialTitle:'Essential · Always active',cookieEssentialText:'Remember your choice and support site and contact form functionality.',cookieAdsTitle:'Advertising · Google Ads',cookieAdsText:'Allows Google Ads to measure campaigns and personalize advertising. Off until you accept.',cookieSave:'Save preferences',
       cookieBannerTitle:'Your privacy matters',
       cookieBannerText:'We save your preferences in this browser. Google Ads loads only if you accept optional technologies.',
       cookieBannerLink:'Read cookie notice',cookieReject:'Essential only',cookieAccept:'Accept optional'
@@ -1357,20 +1370,23 @@
       }
     });
     const cookieBanner=document.querySelector('#cookieBanner');
-    const cookieStorageKey='naitel-cookie-choice-v1';
-    function getCookieChoice(){try{return localStorage.getItem(cookieStorageKey)}catch(_){return null}}
-    function saveCookieChoice(choice){try{localStorage.setItem(cookieStorageKey,choice)}catch(_){}}
-    function updateCookieBanner(){cookieBanner.hidden=!!getCookieChoice()}
-    document.querySelector('#cookieReject').addEventListener('click',()=>{saveCookieChoice('essential');updateCookieBanner()});
-    document.querySelector('#cookieAccept').addEventListener('click',()=>{saveCookieChoice('optional');updateCookieBanner()});
-    function loadOptionalAnalytics(){
-      if(getCookieChoice()!=='optional' || document.querySelector('#optionalAnalytics'))return;
-      window.dataLayer=window.dataLayer||[];window.gtag=function(){window.dataLayer.push(arguments)};
-      window.gtag('js',new Date());window.gtag('config','AW-18496508499');
-      const script=document.createElement('script');script.id='optionalAnalytics';script.async=true;script.src='https://www.googletagmanager.com/gtag/js?id=AW-18496508499';document.head.append(script);
+    const cookieDialog=document.querySelector('#cookieDialog');
+    const cookieAdvertising=document.querySelector('#cookieAdvertising');
+    function updateCookieBanner(){cookieBanner.hidden=!!window.naitelConsent.choice}
+    function chooseCookies(choice){
+      window.naitelConsent.save(choice);
+      updateCookieBanner();
+      cookieDialog.close();
     }
-    document.querySelector('#cookieAccept').addEventListener('click',loadOptionalAnalytics);
-    loadOptionalAnalytics();
+    document.querySelectorAll('.cookie-settings-open').forEach(button=>button.addEventListener('click',()=>{
+      cookieAdvertising.checked=window.naitelConsent.choice==='optional';
+      document.querySelector('#cookieNoticeLink').href='cookies.html#'+lang;
+      cookieDialog.showModal();
+    }));
+    document.querySelector('#cookieClose').addEventListener('click',()=>cookieDialog.close());
+    document.querySelector('#cookieSave').addEventListener('click',()=>chooseCookies(cookieAdvertising.checked?'optional':'essential'));
+    document.querySelector('#cookieReject').addEventListener('click',()=>chooseCookies('essential'));
+    ['#cookieAccept','#cookieAcceptAll'].forEach(selector=>document.querySelector(selector).addEventListener('click',()=>chooseCookies('optional')));
     updateCookieBanner();
     setLang('es');
     typedTitles.clear();

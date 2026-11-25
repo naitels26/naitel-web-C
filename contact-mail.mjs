@@ -121,7 +121,7 @@ export function createContactSender(env = process.env) {
   if (!host || !user || !pass || !mailboxPattern.test(user) ||
       !Number.isInteger(port) || port < 1 || port > 65535) return null;
 
-  const to = 'aleon@naitel.com';
+  const to = 'ventas@naitel.com';
   let transport;
   return async fields => {
     if (!transport) {

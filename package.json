@@ -2,12 +2,14 @@
   "name": "naitel-version-c",
   "version": "1.0.0",
   "private": true,
-  "engines": { "node": "24.x" },
+  "engines": {
+    "node": "24.x"
+  },
   "dependencies": {
     "nodemailer": "10.4.0"
   },
   "scripts": {
     "start": "node server.mjs",
-    "test": "node verify-site.mjs"
+    "test": "node verify-site.mjs && node verify-contact-consent.mjs"
   }
 }

@@ -19,7 +19,9 @@ for(const row of csv.trim().split(/\r?\n/).slice(1)){
 for(const path of [...paths].filter(path=>path.startsWith('/assets/')))await access(new URL('.'+path,import.meta.url));
 assert.ok(!/Versi[oó]n [AB]|\.\.\//.test(activeHTML),'No sibling dependencies');
 const footer=activeHTML.match(/<footer[\s\S]*?<\/footer>/)[0];
-assert.ok(!/tel:|mailto:|navigation-row|pager|slidePosition|id="(?:prev|next)"/.test(footer));
+assert.ok(!/navigation-row|pager|slidePosition|id="(?:prev|next)"/.test(footer));
+assert.ok(footer.includes('tel:+528001886248') && footer.includes('mailto:ventas@naitel.com'));
+assert.ok(footer.includes('cookie-settings-open'));
 assert.ok(footer.includes('data-privacy-notice')&&footer.includes('logo-carousel'));
 assert.ok(!/pagerButtons|pointerInChrome|data-go|slidePosition/.test(activeHTML));
 assert.ok(activeHTML.indexOf('id="openAssistant"')>activeHTML.indexOf('</main>'));
