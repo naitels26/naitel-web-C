@@ -1,5 +1,5 @@
 /* C keeps A's scenes and videos, with a calmer reading and navigation rhythm. */
-:root { --footer-height: 90px; --copy-gutter: clamp(28px,7vw,120px); --slide-transition: .35s; }
+:root { --footer-height: 98px; --copy-gutter: clamp(28px,7vw,120px); --slide-transition: .35s; }
 html, body { width: 100%; overflow-x: clip; }
 button, select, input { font: inherit; }
 button { touch-action: manipulation; }
@@ -26,30 +26,34 @@ button { touch-action: manipulation; }
 .direct-contact a { text-decoration: underline; text-underline-offset: 4px; overflow-wrap: anywhere; }
 .contact-copy .direct-contact { margin-bottom: 24px; color: #a8deff; }
 .field :is(input,select), .assistant-form input { font-size: 16px; }
-.footer-ui { display:grid; grid-template-rows:28px 30px 32px; padding:0; gap:0; border:0; background:transparent; height:var(--footer-height); }
-.site-assistant-button { position:fixed; z-index:1000; right:max(16px,env(safe-area-inset-right,0px)); bottom:calc(90px + env(safe-area-inset-bottom,0px)); margin:0; min-height:44px; box-shadow:0 4px 16px #0004; touch-action:none; user-select:none; cursor:grab; }
+.footer-ui { display:grid; grid-template-rows:28px 30px 40px; padding:0; gap:0; border:0; background:transparent; height:var(--footer-height); }
+.site-assistant-button { position:fixed; z-index:1000; right:max(16px,env(safe-area-inset-right,0px)); bottom:calc(98px + env(safe-area-inset-bottom,0px)); margin:0; min-height:44px; box-shadow:0 4px 16px #0004; touch-action:none; user-select:none; cursor:grab; }
 .footer-privacy:hover { color:#d3e5f3; text-decoration:underline; }
 .footer-details { display:flex; align-items:center; justify-content:center; padding:0 76px; }
 .footer-privacy { font-size:12px; color:rgba(211,229,243,.6); text-decoration:none; }
-.logo-carousel { display:flex; align-items:center; height:32px; overflow:visible; background:#f6fafe; box-shadow:0 -6px 0 #f6fafe; color:#16334d; padding:2px 16px; min-width:0; }
+.logo-carousel { display:flex; align-items:center; height:40px; overflow:visible; background:#10283b; box-shadow:none; color:#c7d1da; padding:2px 16px; min-width:0; }
 .logo-carousel-content { overflow:visible; clip-path:inset(-64px 0 -4px); min-width:0; flex:1; }
 .logo-carousel-list { display:flex; align-items:center; width:max-content; margin:0; padding:0; list-style:none; animation:partner-logo-marquee 90s linear infinite; }
-.logo-carousel-list li { display:flex; align-items:center; justify-content:center; flex:0 0 auto; min-width:80px; height:26px; margin-right:36px; color:#16334d; font-size:12px; }
-.carousel-logo-frame { display:block; position:relative; width:120px; height:26px; overflow:hidden; flex:none; }
-.logo-carousel-list img { position:absolute; display:block; width:120px; height:20px; max-width:none; max-height:none; object-fit:fill; }
-.logo-carousel-list img[src$="/cyberpower.png"] { filter:brightness(0); }
+.logo-carousel-list li { display:flex; align-items:center; justify-content:center; flex:0 0 auto; min-width:80px; height:32px; margin-right:32px; color:inherit; font-size:12px; }
+.carousel-logo-frame { display:block; position:relative; width:120px; height:32px; overflow:hidden; flex:none; }
+.logo-carousel-list img { position:absolute; display:block; width:120px; height:20px; max-width:none; max-height:none; object-fit:fill; filter:grayscale(1) brightness(0) invert(.78); transition:filter .25s ease; }
+.logo-carousel-list li:hover img,
+.logo-carousel-list .carousel-brand-mark:focus-visible img { filter:none; }
+@media(prefers-reduced-motion:reduce) { .logo-carousel-list img { transition:none; } }
 .logo-carousel:hover .logo-carousel-list,.logo-carousel:focus-within .logo-carousel-list { animation-play-state:paused; }
 .logo-carousel-content:has(.is-static) { overflow-x:auto; }
 .logo-carousel-list.is-static { animation:none; }
 .logo-carousel.has-certification-preview .logo-carousel-list { animation-play-state:paused; }
 /* Dock magnification: neighboring logos rise into an arc around the selection.
    Keep pointer targets anchored so lifting the artwork cannot interrupt hover. */
-.carousel-brand-mark { position:relative; isolation:isolate; display:flex; align-items:center; justify-content:center; min-width:80px; height:26px; padding:0 8px; border:0; border-radius:10px; background:transparent; color:inherit; }
+.carousel-brand-mark { position:relative; isolation:isolate; display:flex; align-items:center; justify-content:center; min-width:80px; height:32px; padding:0 8px; border:0; border-radius:10px; background:transparent; color:inherit; }
 .carousel-brand { cursor:pointer; }
 .carousel-brand-mark::after { content:""; position:absolute; left:12%; right:12%; bottom:0; height:5px; border-radius:50%; background:#173e6380; filter:blur(3px); opacity:var(--dock-halo); pointer-events:none; transform:scaleX(.85); transition:opacity .3s ease,transform .36s ease; }
 .logo-carousel-list li:has(.carousel-brand-mark:is(:focus-visible,[aria-expanded="true"])) .carousel-brand-mark::after { transform:scaleX(1); }
 .logo-carousel-list li { --dock-lift:0px; --dock-scale:1; --dock-tilt:0deg; --dock-depth:0px; --dock-pitch:0deg; --dock-halo:0; position:relative; }
 .carousel-brand-mark::before { content:""; position:absolute; inset:0 -2px; border:1px solid #d4e3ee; border-radius:8px; background:#ffffff80; box-shadow:0 2px 6px #102f4a12; opacity:var(--dock-halo); pointer-events:none; transform:perspective(500px) translateY(var(--dock-lift)) translateZ(var(--dock-depth)) rotateX(var(--dock-pitch)) scale(var(--dock-scale)); transition:transform .36s cubic-bezier(.2,.8,.25,1.15),opacity .2s ease; }
+.logo-carousel-list li:hover .carousel-brand-mark::before,
+.carousel-brand-mark:focus-visible::before { background:#f6fafe; opacity:1; }
 .carousel-brand-mark .carousel-logo-frame { pointer-events:none; transform:perspective(500px) translateY(var(--dock-lift)) translateZ(var(--dock-depth)) rotateX(var(--dock-pitch)) rotateZ(var(--dock-tilt)) scale(var(--dock-scale)); transition:transform .36s cubic-bezier(.2,.8,.25,1.15); }
 .carousel-brand:focus-visible { outline:2px solid #167cba; outline-offset:3px; }
 .logo-carousel-list li:has(.carousel-brand-mark:is(:focus-visible,[aria-expanded="true"])) { --dock-lift:-12px; --dock-depth:12px; --dock-pitch:10deg; --dock-scale:1.06; --dock-halo:.35; z-index:3; }
@@ -117,7 +121,7 @@ body:has(dialog[open]) .logo-carousel-list { animation-play-state:paused; }
   .tag { display:none; }
 }
 @media(max-width:620px) {
-  :root { --header-height:104px; --footer-height:calc(90px + env(safe-area-inset-bottom,0px)); --copy-gutter:22px; }
+  :root { --header-height:104px; --footer-height:calc(98px + env(safe-area-inset-bottom,0px)); --copy-gutter:22px; }
   .header { grid-template:58px 46px / minmax(0,1fr) auto auto; padding-inline:14px; }
   .nav { gap:0; width:100%; align-items:center; }
   #solutionsToggle { min-height:44px; padding-inline:0; }
@@ -134,7 +138,7 @@ body:has(dialog[open]) .logo-carousel-list { animation-play-state:paused; }
   .contact-slide .slide-content { padding:22px 18px; }
   .contact-grid { grid-template-columns:minmax(0,1fr); }
   .contact-grid-phone { grid-template-columns:minmax(0,1fr) 78px; }
-  .footer-ui { grid-template-rows:28px 30px 32px; padding-bottom:env(safe-area-inset-bottom,0px); }
+  .footer-ui { grid-template-rows:28px 30px 40px; padding-bottom:env(safe-area-inset-bottom,0px); }
   .footer-details { display:flex; align-items:center; justify-content:center; padding:0 76px; }
   .footer-privacy { font-size:12px; color:rgba(211,229,243,.6); text-decoration:none; }
   .logo-carousel { padding-inline:10px; gap:8px; }
@@ -157,8 +161,8 @@ body:has(dialog[open]) .logo-carousel-list { animation-play-state:paused; }
   .keyboard-open .slide-content { align-items:start; }
 }
 @media(max-height:500px) and (min-width:621px) {
-  :root { --header-height:60px; --footer-height:90px; }
-  .footer-ui { grid-template-rows:28px 30px 32px; }
+  :root { --header-height:60px; --footer-height:98px; }
+  .footer-ui { grid-template-rows:28px 30px 40px; }
   .footer-details { display:flex; align-items:center; justify-content:center; padding:0 76px; }
   .slide-content { align-items:start; }
   .site-assistant { inset:8px 12px auto auto; height:calc(var(--visual-height,100dvh) - 16px); }

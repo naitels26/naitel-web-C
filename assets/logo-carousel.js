@@ -161,15 +161,16 @@ const logoCarousel = (() => {
         image.decoding = 'async';
         const metrics=typeof carouselLogoMetrics==='undefined'?null:carouselLogoMetrics[logo];
         if(metrics){
-          // Normalize the visible artwork, excluding transparent margins.
-          const targetHeight=14.4;
-          const scale=targetHeight/metrics.visibleHeight;
+          // Fit visible artwork within a compact box, preserving its proportions.
+          const targetHeight=15;
+          const scale=Math.min(targetHeight/metrics.visibleHeight,105/metrics.visibleWidth);
+          const visibleHeight=metrics.visibleHeight*scale;
           const width=metrics.visibleWidth*scale;
           frame.style.width=`${width}px`;
           image.style.width=`${metrics.width*scale}px`;
           image.style.height=`${metrics.height*scale}px`;
           image.style.left=`${-metrics.x*scale}px`;
-          image.style.top=`${(26-targetHeight)/2-metrics.y*scale}px`;
+          image.style.top=`${(32-visibleHeight)/2-metrics.y*scale}px`;
         }
         image.addEventListener('error', () => {
           frame.textContent = name;
