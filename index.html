@@ -1006,6 +1006,7 @@
       assistantTyping.hidden=!isTyping;
       assistantSend.disabled=isTyping;
       assistantSuggestion.disabled=isTyping;
+      updateAssistantSuggestion();
       assistantClear.disabled=!isTyping && !assistantHistory.length;
       assistantContact.hidden=isTyping || !assistantHistory.length;
       assistantContact.dataset.service=services.length===1 ? services[0] : '';
@@ -1159,13 +1160,16 @@
     });
     function updateAssistantSuggestion(){
       const suggestion=assistantSuggestions[lang][assistantSourceSlide];
-      assistantSuggestion.hidden=!suggestion;
+      assistantSuggestion.hidden=!suggestion || Boolean(assistantQuestion.value.trim()) ||
+        assistantPending!==null || assistantHistory.length>0;
       assistantSuggestion.textContent=suggestion ?? '';
     }
     assistantSuggestion.addEventListener('click',()=>{
       assistantQuestion.value=assistantSuggestion.textContent;
+      updateAssistantSuggestion();
       assistantQuestion.focus();
     });
+    assistantQuestion.addEventListener('input',updateAssistantSuggestion);
     function openAssistant(slideIndex=current){
       assistantSourceSlide=slideIndex;
       updateAssistantSuggestion();

@@ -1,6 +1,21 @@
 import assert from 'node:assert/strict';
 import { setTimeout as delay } from 'node:timers/promises';
+import { readFile } from 'node:fs/promises';
 import { createLandingServer } from './server.mjs';
+import { selectCatalogContext } from './assistant-context.mjs';
+
+const catalog = await readFile(new URL('./assistant-catalog.txt', import.meta.url), 'utf8');
+for (const question of ['¿Qué servicios ofrecen?', '¿Instalan UPS?', 'Do you offer backup and storage?']) {
+  const context = selectCatalogContext(catalog, { question, history: [] });
+  assert.ok(context.length < catalog.length / 2 && context.length <= 18000);
+  assert.ok(context.includes('RESTRICCIONES COMERCIALES'));
+  assert.ok(context.includes('sistemas ERP, CRM'));
+  assert.ok(context.includes('29. GLOSARIO'));
+}
+assert.ok(selectCatalogContext(catalog, { question: '¿Instalan UPS?' }).includes('POTENCIAS UPS'));
+assert.ok(selectCatalogContext(catalog, { question: 'How do you handle backup?' }).includes('18. RESPALDOS, RECUPERACIÓN Y CONTINUIDAD\n'));
+assert.ok(selectCatalogContext(catalog, { question: '¿Y cómo lo trabajan?', history: [{ question: '¿Instalan UPS?' }] }).includes('POTENCIAS UPS'));
+console.log('PASS: compact catalog retains business limits, software offering, full index, relevant UPS/backup details and follow-up context.');
 
 const success = () => Response.json({ candidates: [{ content: { parts: [{ text:
   JSON.stringify({ answer: 'Respuesta de prueba', usedReferences: [] })
@@ -15,6 +30,8 @@ async function scenario(statuses, expectedStatus, expectedModels, options = {}) 
       models.push(decodeURIComponent(String(url).match(/models\/([^:]+):/)[1]));
       assert.equal(request.headers['x-goog-api-key'], 'test-only');
       const body = JSON.parse(request.body);
+      const input = JSON.parse(body.contents[0].parts[0].text);
+      assert.ok(input.corporateCatalog.length < catalog.length / 2);
       assert.equal(body.generationConfig.responseMimeType, 'application/json');
       if (models.at(-1) === 'gemini-3.8-flash') {
         assert.equal(body.generationConfig.thinkingConfig.thinkingLevel, 'low');

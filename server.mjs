@@ -4,6 +4,7 @@ import { createServer } from 'node:http';
 import { pathToFileURL } from 'node:url';
 import { setTimeout as waitForRetry } from 'node:timers/promises';
 import { createContactSender, validateContact } from './contact-mail.mjs';
+import { selectCatalogContext } from './assistant-context.mjs';
 
 const index = readFileSync(new URL('./index.html', import.meta.url), 'utf8');
 const catalogFacts = readFileSync(new URL('./assistant-catalog.txt', import.meta.url), 'utf8').trim();
@@ -128,7 +129,7 @@ async function generateReply(input, { apiKey, model, fallbackModel, fetcher, ref
         body: JSON.stringify({
           systemInstruction: { parts: [{ text: systemInstruction }] },
           contents: [{ role: 'user', parts: [{ text: JSON.stringify({
-            corporateCatalog: catalogFacts,
+            corporateCatalog: selectCatalogContext(catalogFacts, input),
             language: input.language,
             recentConversation: input.history,
             question: input.question,

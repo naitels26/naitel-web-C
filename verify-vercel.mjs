@@ -11,7 +11,7 @@ assert.equal(config.outputDirectory, 'public');
 for (const name of ['index.html', 'privacidad.html', 'cookies.html', 'assets/version-c.css', 'assets/logo-carousel.js', 'assets/logos/partners.csv']) {
   assert.deepEqual(await readFile(new URL('./public/' + name, import.meta.url)), await readFile(new URL('./' + name, import.meta.url)));
 }
-for (const name of ['.env', 'server.mjs', 'contact-mail.mjs', 'assistant-catalog.txt', 'node_modules', 'verification', 'assets/brochures']) {
+for (const name of ['.env', 'server.mjs', 'contact-mail.mjs', 'assistant-context.mjs', 'assistant-catalog.txt', 'node_modules', 'verification', 'assets/brochures']) {
   await assert.rejects(access(new URL('./public/' + name, import.meta.url)), { code: 'ENOENT' });
 }
 assert.deepEqual((await readdir(new URL('./public/', import.meta.url))).sort(), ['assets', 'cookies.html', 'index.html', 'privacidad.html']);
