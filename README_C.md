@@ -1,5 +1,9 @@
 # NAITEL — Versión C
 
+## Envío por Microsoft 365 — configuración actual
+
+Para el formulario en Vercel se agregó Microsoft Graph con OAuth. La guía vigente es [MICROSOFT365_VERCEL.md](MICROSOFT365_VERCEL.md): autorización de la aplicación por el administrador, variables privadas en Vercel y prueba de entrega. El destinatario temporal de pruebas es **aleon@naitel.com**, centralizado en `CONTACT_RECIPIENT` dentro de `contact-mail.mjs`. Las referencias históricas a ventas y a SMTP más abajo describen la configuración previa; SMTP sigue disponible cuando no hay variables M365. Sin credenciales configuradas y autorización del buzón no se envía correo.
+
 ## Despliegue en Vercel
 
 `vercel.json` prepara `public/` con las tres páginas y los recursos permitidos; los videos se sirven como archivos estáticos. `api/index.mjs` exporta el handler del chat y contacto sin abrir un puerto. La función incluye explícitamente el HTML y el catálogo que necesita al arrancar. El servidor local continúa funcionando con `Iniciar.cmd`.

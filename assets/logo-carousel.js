@@ -9,7 +9,18 @@ const logoCarousel = (() => {
     es: ['Logos de marcas aliadas', 'Los logos no están disponibles en este momento.']
   };
   const SPEED = 28; // píxeles por segundo
-  const certificationBrands = new Set(['panduit.svg', 'axis.svg', 'mobotix.svg', 'hanwha-vision.svg', 'hikvision.svg', 'microsoft.svg', 'dell-technologies.svg']);
+  const certifications = new Map([
+    ['schneider-electric.svg', 'Schneider Certified Partner'],
+    ['genetec.svg', 'Genetec Certified Partner'],
+    ['milestone.png', 'Milestone Certified Partner'],
+    ['microsoft.svg', 'Microsoft Partner'],
+    ['axis.svg', 'Axis Gold Parner'],
+    ['panduit.svg', 'Panduit Gold Partner'],
+    ['cisco.svg', 'Cisco Certified Partner'],
+    ['fortinet.svg', 'Fortinet Advocate Partner'],
+    ['belden.svg', 'Belden Certified Partner'],
+    ['commscope.png', 'Commscope Certified Partner']
+  ]);
   let language = 'en';
   let cards = [];
   let resizeTimer;
@@ -20,7 +31,7 @@ const logoCarousel = (() => {
   preview.className = 'brand-certifications';
   preview.hidden = true;
   preview.setAttribute('role', 'region');
-  preview.innerHTML = `<header><span class="certification-eyebrow"></span><strong></strong><span class="certification-demo"></span></header><div class="certification-cards">${[1, 2].map(number => `<div class="certification-card"><span class="certification-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 3h10v12H7zM10 7h4M10 10h4M9 15v6l3-2 3 2v-6"/></svg></span><span data-certification="${number}"></span></div>`).join('')}</div>`;
+  preview.innerHTML = `<header><span class="certification-eyebrow"></span><strong></strong></header><div class="certification-cards"><div class="certification-card"><div class="certification-credential"><span class="certification-emblem" aria-hidden="true"><svg class="certification-diploma" viewBox="0 0 52 40" fill="none"><rect x="2" y="2" width="46" height="32" rx="3" fill="currentColor" fill-opacity=".06" stroke="currentColor" stroke-width="1.4"/><path d="M7 11V7h4M39 7h4v4M7 25v4h4M39 29h4v-4" stroke="currentColor" stroke-opacity=".45" stroke-linecap="round"/><path d="M17 11h16M12 17h26M16 22h18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="m12 28 2-2 2 2 3-3" stroke="currentColor" stroke-opacity=".65" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="certification-seal" aria-hidden="true" viewBox="0 0 36 42" fill="none"><path d="m9 25-3 14 7-3 4 5 3-15M19 26l3 15 4-5 7 3-5-15" fill="currentColor" fill-opacity=".2" stroke="currentColor" stroke-linejoin="round"/><path d="m18 2 4 3 5 .5 1.5 5 3 4-1.5 5 .2 5-4.5 2.5-3 4-4.7-1-4.7 1-3-4L5.8 25l.2-5-1.5-5 3-4 1.5-5 5-.5Z" fill="currentColor" fill-opacity=".13" stroke="currentColor"/><circle cx="18" cy="16" r="8" stroke="currentColor" stroke-opacity=".5"/><path d="m14 16 2.7 2.7 5.3-5.4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span data-certification></span></div></div></div>`;
   document.body.append(preview);
 
   function positionPreview() {
@@ -47,10 +58,8 @@ const logoCarousel = (() => {
     const spanish = language === 'es';
     preview.querySelector('.certification-eyebrow').textContent = spanish ? 'Certificaciones' : 'Certifications';
     preview.querySelector('strong').textContent = trigger.dataset.brand;
-    preview.querySelector('.certification-demo').textContent = spanish ? 'Ejemplos' : 'Examples';
-    preview.querySelectorAll('[data-certification]').forEach(label => {
-      label.textContent = `${spanish ? 'Certificación' : 'Certification'} ${label.dataset.certification}`;
-    });
+    preview.querySelector('[data-certification]').textContent = trigger.dataset.certification;
+    preview.classList.toggle('is-gold', trigger.dataset.certification.includes('Gold'));
     preview.setAttribute('aria-label', `${spanish ? 'Certificaciones de' : 'Certifications for'} ${trigger.dataset.brand}`);
     trigger.setAttribute('aria-expanded', 'true');
     trigger.setAttribute('aria-describedby', preview.id);
@@ -130,13 +139,15 @@ const logoCarousel = (() => {
       cards = catalog.map(({ name, logo }) => {
         if(logo==='huawei.svg') logo='huawei.png';
         const item = document.createElement('li');
-        const hasCertifications = certificationBrands.has(logo);
+        const certification = certifications.get(logo);
+        const hasCertifications = Boolean(certification);
         const trigger = document.createElement(hasCertifications ? 'button' : 'span');
         trigger.className = 'carousel-brand-mark';
         if (hasCertifications) {
           trigger.type = 'button';
           trigger.classList.add('carousel-brand');
           trigger.dataset.brand = name;
+          trigger.dataset.certification = certification;
           trigger.setAttribute('aria-expanded', 'false');
           trigger.setAttribute('aria-controls', preview.id);
           trigger.setAttribute('aria-label', `${language === 'es' ? 'Ver certificaciones de' : 'View certifications for'} ${name}`);

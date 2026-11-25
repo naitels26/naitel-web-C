@@ -43,13 +43,13 @@ let sent;
 try {
   nodemailer.createTransport = () => ({ sendMail: async message => {
     sent = message;
-    return { accepted: ['ventas@naitel.com'] };
+    return { accepted: ['aleon@naitel.com'] };
   } });
   const send = createContactSender({ SMTP_HOST: 'smtp.example.test', SMTP_USER: 'sender@example.test', SMTP_PASS: 'test-only' });
   await send({ name: 'Persona de prueba', company: 'Empresa <test>', email: 'reply@example.test', phone: '8001886248', reason: 'Diagnóstico' });
-  assert.equal(sent.to, 'ventas@naitel.com');
-  assert.deepEqual(sent.envelope.to, ['ventas@naitel.com']);
+  assert.equal(sent.to, 'aleon@naitel.com');
+  assert.deepEqual(sent.envelope.to, ['aleon@naitel.com']);
   assert.equal(sent.replyTo, 'reply@example.test');
   assert.match(sent.html, /Empresa &lt;test&gt;/);
 } finally { nodemailer.createTransport = original; }
-console.log('PASS: Ads blocked/accepted/restored/revoked, duplicate prevention, blocked storage; sales recipient, envelope and reply-to. No real email or Google requests.');
+console.log('PASS: Ads blocked/accepted/restored/revoked, duplicate prevention, blocked storage; test recipient, envelope and reply-to. No real email or Google requests.');

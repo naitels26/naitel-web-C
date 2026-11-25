@@ -113,7 +113,53 @@ function formatContactEmail(fields) {
   return { subject, text, html };
 }
 
-export function createContactSender(env = process.env) {
+// Test recipient. Change here to ventas@naitel.com after verifying real delivery.
+export const CONTACT_RECIPIENT = 'aleon@naitel.com';
+
+function createMicrosoft365Sender(env, fetcher) {
+  const tenant = env.M365_TENANT_ID?.trim();
+  const client = env.M365_CLIENT_ID?.trim();
+  const secret = env.M365_CLIENT_SECRET;
+  const sender = env.M365_SENDER?.trim();
+  const guid = /^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/i;
+  if (!guid.test(tenant ?? '') || !guid.test(client ?? '') || !secret ||
+      !mailboxPattern.test(sender ?? '') || controlCharacters.test(sender)) return null;
+
+  const fail = (stage, status) => Object.assign(new Error('Microsoft 365 mail request failed.'), {
+    code: `M365_${stage}_${status}`
+  });
+  return async fields => {
+    // HTTPS works in serverless environments without an SMTP connection.
+    const tokenResponse = await fetcher(`https://login.microsoftonline.com/${tenant}/oauth2/v2.0/token`, {
+      method: 'POST', redirect: 'error', signal: AbortSignal.timeout(8000),
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ client_id: client, client_secret: secret,
+        scope: 'https://graph.microsoft.com/.default', grant_type: 'client_credentials' }).toString()
+    });
+    if (!tokenResponse.ok) throw fail('AUTH', tokenResponse.status);
+    const token = await tokenResponse.json();
+    if (typeof token.access_token !== 'string' || !token.access_token ||
+        controlCharacters.test(token.access_token)) throw fail('AUTH', 'TOKEN');
+    const { subject, html } = formatContactEmail(fields);
+    const response = await fetcher(`https://graph.microsoft.com/v1.0/users/${encodeURIComponent(sender)}/sendMail`, {
+      method: 'POST', redirect: 'error', signal: AbortSignal.timeout(12000),
+      headers: { Authorization: `Bearer ${token.access_token}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ message: {
+        subject, body: { contentType: 'HTML', content: html },
+        toRecipients: [{ emailAddress: { address: CONTACT_RECIPIENT } }],
+        replyTo: [{ emailAddress: { address: fields.email } }]
+      }, saveToSentItems: true })
+    });
+    // Accepted by Microsoft for sending; final delivery is handled by Exchange.
+    // Do not retry automatically: an uncertain response could duplicate a message.
+    if (response.status !== 202) throw fail('SEND', response.status);
+  };
+}
+
+export function createContactSender(env = process.env, { fetcher = fetch } = {}) {
+  if (['M365_TENANT_ID', 'M365_CLIENT_ID', 'M365_CLIENT_SECRET', 'M365_SENDER'].some(key => env[key])) {
+    return createMicrosoft365Sender(env, fetcher);
+  }
   const host = env.SMTP_HOST?.trim();
   const user = env.SMTP_USER?.trim();
   const pass = env.SMTP_PASS;
@@ -121,7 +167,7 @@ export function createContactSender(env = process.env) {
   if (!host || !user || !pass || !mailboxPattern.test(user) ||
       !Number.isInteger(port) || port < 1 || port > 65535) return null;
 
-  const to = 'ventas@naitel.com';
+  const to = CONTACT_RECIPIENT;
   let transport;
   return async fields => {
     if (!transport) {
