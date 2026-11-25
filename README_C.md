@@ -6,6 +6,8 @@ Para el formulario en Vercel se agregó Microsoft Graph con OAuth. La guía vige
 
 ## Despliegue en Vercel
 
+Gemini admite `GEMINI_API_KEY`, `GEMINI_MODEL` (opcional, por defecto `gemini-3.5-flash-lite`) y `GEMINI_FALLBACK_MODEL` (opcional, por defecto `gemini-3.8-flash`). Ante errores temporales de Google o un timeout del primer intento, espera brevemente y realiza un único intento con el modelo de respaldo. Los límites son 12 s por el primer intento, 10 s por el segundo, 26 s en el servidor y 28 s en el navegador, dentro del máximo de 30 s de Vercel. Un 503 de Google puede persistir aunque la configuración sea correcta; el modo local continúa disponible si fallan ambos intentos. Las variables nuevas requieren otro despliegue.
+
 `vercel.json` prepara `public/` con las tres páginas y los recursos permitidos; los videos se sirven como archivos estáticos. `api/index.mjs` exporta el handler del chat y contacto sin abrir un puerto. La función incluye explícitamente el HTML y el catálogo que necesita al arrancar. El servidor local continúa funcionando con `Iniciar.cmd`.
 
 Vercel ejecuta `node prepare-vercel.mjs` y publica `public/`. Configurar `GEMINI_API_KEY` y las variables SMTP en Vercel para habilitar esos servicios. Sin ellas, las APIs devuelven 503 y la página sigue disponible. No subir archivos `.env`.

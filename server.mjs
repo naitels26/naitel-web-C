@@ -2,6 +2,7 @@ import { createReadStream, readFileSync } from 'node:fs';
 import { stat } from 'node:fs/promises';
 import { createServer } from 'node:http';
 import { pathToFileURL } from 'node:url';
+import { setTimeout as waitForRetry } from 'node:timers/promises';
 import { createContactSender, validateContact } from './contact-mail.mjs';
 
 const index = readFileSync(new URL('./index.html', import.meta.url), 'utf8');
@@ -33,8 +34,8 @@ const assetTypes = {
 };
 const partnersCatalogPath = '/assets/logos/partners.csv';
 const flashLiteModel = 'gemini-3.5-flash-lite';
-const fallbackModel = 'gemini-3.1-flash-lite';
-const chatTimeoutMs = 10000;
+const defaultFallbackModel = 'gemini-3.8-flash';
+const chatTimeoutMs = 26000;
 const referenceCacheMs = 15 * 60 * 1000;
 class GeminiReplyError extends Error {
   constructor(message, retryable = false) {
@@ -113,7 +114,7 @@ async function getReference(key, language, fetcher, signal, cache) {
   }
 }
 
-async function generateReply(input, { apiKey, model, fetcher, referenceCache }, signal) {
+async function generateReply(input, { apiKey, model, fallbackModel, fetcher, referenceCache }, signal) {
   const references = (await Promise.all(input.keys.map(key => getReference(key, input.language, fetcher, signal, referenceCache))))
     .filter(Boolean);
   const requestGemini = async (targetModel, timeoutMs) => {
@@ -146,7 +147,7 @@ async function generateReply(input, { apiKey, model, fetcher, referenceCache }, 
       });
       if (!response.ok) {
         await response.body?.cancel();
-        throw new GeminiReplyError(`Google devolvió HTTP ${response.status} con ${targetModel}.`, response.status === 503);
+        throw new GeminiReplyError(`Google devolvió HTTP ${response.status} con ${targetModel}.`, [408, 500, 502, 503, 504].includes(response.status));
       }
       return (await response.json()).candidates?.[0];
     } catch (error) {
@@ -158,12 +159,13 @@ async function generateReply(input, { apiKey, model, fetcher, referenceCache }, 
   };
   let candidate;
   try {
-    candidate = await requestGemini(model, 6500);
+    candidate = await requestGemini(model, 12000);
   } catch (error) {
     if (!(error instanceof GeminiReplyError) || !error.retryable || signal.aborted) throw error;
-    const targetModel = model === fallbackModel ? flashLiteModel : fallbackModel;
+    const targetModel = fallbackModel;
     console.warn(`[Gemini] ${error.message} Reintentando con ${targetModel}.`);
-    candidate = await requestGemini(targetModel, 4500);
+    await waitForRetry(500 + Math.floor(Math.random() * 250), undefined, { signal });
+    candidate = await requestGemini(targetModel, 10000);
   }
   if (candidate?.finishReason === 'MAX_TOKENS') throw new GeminiReplyError('Google agotó el límite de tokens.');
   const output = candidate?.content?.parts?.filter(part => !part.thought).map(part => part.text ?? '').join('');
@@ -224,6 +226,7 @@ async function serveFile(request, response, pathname) {
 export function createLandingHandler({
   apiKey = process.env.GEMINI_API_KEY,
   model = process.env.GEMINI_MODEL || flashLiteModel,
+  fallbackModel = process.env.GEMINI_FALLBACK_MODEL || defaultFallbackModel,
   fetcher = fetch,
   sendContact = createContactSender()
 } = {}) {
@@ -299,7 +302,7 @@ export function createLandingHandler({
       response.once('close', () => controller.abort());
       const signal = AbortSignal.any([controller.signal, AbortSignal.timeout(chatTimeoutMs)]);
       try {
-        const result = await generateReply(input, { apiKey, model, fetcher, referenceCache }, signal);
+        const result = await generateReply(input, { apiKey, model, fallbackModel, fetcher, referenceCache }, signal);
         if (!response.destroyed) json(response, 200, result);
       } catch (error) {
         if (!response.destroyed) {

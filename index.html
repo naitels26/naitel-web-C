@@ -1093,7 +1093,7 @@
         const response=await fetch('/api/chat',{
           method:'POST',
           headers:{'Content-Type':'application/json'},
-          signal:AbortSignal.any([signal,AbortSignal.timeout(11000)]),
+          signal:AbortSignal.any([signal,AbortSignal.timeout(28000)]),
           body:JSON.stringify({
             question,language,
             history:assistantHistory.slice(-4).map(turn=>({question:turn.question,answer:turn.answer.slice(0,700)})),
