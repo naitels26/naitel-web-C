@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { setTimeout as delay } from 'node:timers/promises';
 import { createLandingServer } from './server.mjs';
 
 const success = () => Response.json({ candidates: [{ content: { parts: [{ text:
@@ -18,8 +19,13 @@ async function scenario(statuses, expectedStatus, expectedModels, options = {}) 
       if (models.at(-1) === 'gemini-3.8-flash') {
         assert.equal(body.generationConfig.thinkingConfig.thinkingLevel, 'low');
       }
-      const status = statuses.shift();
-      assert.ok(status, 'Unexpected additional retry');
+      if (['gemini-3.6-flash', 'gemini-3.5-flash-lite', 'gemini-3.1-flash-lite'].includes(models.at(-1))) {
+        assert.equal(body.generationConfig.thinkingConfig.thinkingLevel, 'minimal');
+      }
+      const next = statuses.shift();
+      assert.ok(next, 'Unexpected additional retry');
+      if (typeof next === 'object') await delay(next.delay, undefined, { signal: request.signal });
+      const status = typeof next === 'object' ? next.status : next;
       return status === 200 ? success() : new Response('', { status });
     }
   });
@@ -49,4 +55,12 @@ await scenario([504, 200], 200, ['gemini-3.5-flash-lite', 'gemini-3.8-flash']);
 await scenario([403], 502, ['gemini-3.5-flash-lite']);
 await scenario([400], 502, ['gemini-3.5-flash-lite']);
 await scenario([503, 200], 200, ['gemini-3.5-flash-lite', 'custom-model'], { fallbackModel: 'custom-model' });
+await scenario([503, 200], 200, ['gemini-3.8-flash', 'gemini-3.6-flash'], {
+  model: 'gemini-3.8-flash', fallbackModel: 'gemini-3.6-flash'
+});
+// Regression: a fallback taking over ten seconds must still succeed when a
+// fast primary 503 left enough time in the overall serverless request budget.
+await scenario([503, { status: 200, delay: 10500 }], 200, ['gemini-3.8-flash', 'gemini-3.6-flash'], {
+  model: 'gemini-3.8-flash', fallbackModel: 'gemini-3.6-flash'
+});
 console.log('PASS: Gemini primary, transient error recovery, bounded fallback, custom fallback and no retry for invalid authentication/request. Simulated Google responses only.');

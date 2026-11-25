@@ -15,7 +15,7 @@ const pageFacts = [...index.matchAll(/<section\b[^>]*\bdata-slide="\d+"[^>]*>([\
   .join('\n\n');
 const contactReasons = new Map([...index.matchAll(/<option value="([^"]+)" data-i18n="reason[1-9]">([^<]+)<\/option>/g)]
   .map(([, value, label]) => [value, label]));
-const systemInstruction = `You are the first point of contact on the NAITEL website. Answer in the requested language (Spanish or English), in plain text, with a professional, approachable tone. Use recent exchanges to resolve follow-ups such as "¿cómo lo trabajan?" or "more info" when the service is clear. Answer the question first using the relevant criteria or steps. Ask one useful follow-up only when it would help tailor the guidance. If the topic is ambiguous, ask which service or project the visitor means.
+const systemInstruction = `You are the first point of contact on the NAITEL website. Answer in the requested language (Spanish or English), in plain text, with a professional, approachable tone. Keep most answers under 150 words, expanding only when the visitor requests technical detail. Use recent exchanges to resolve follow-ups such as "¿cómo lo trabajan?" or "more info" when the service is clear. Answer the question first using the relevant criteria or steps. Ask one useful follow-up only when it would help tailor the guidance. If the topic is ambiguous, ask which service or project the visitor means.
 
 Use the site facts below and the corporateCatalog field supplied by the server as the only sources for claims about NAITEL. When the site gives a broad description, use specific criteria, tests or comparisons from the relevant catalog section to answer technical questions and follow-ups. Distinguish an offering or an option to evaluate from a feature included in a contract. Treat illustrative examples as hypothetical and model answers as reference material. Standards named in the dated catalog are guidance. Do not assert current applicability, legal compliance or certification for a particular project. Avoid inventing prices, stock, partner status, timelines, availability, compatibility, response times, project references, or certifications. If a detail requires validation, say which data are missing. Offer the site's free technical assessment and direct contact requests to the site form. Do not claim that an appointment was booked, a quote was issued, or a ticket was opened.
 
@@ -115,6 +115,7 @@ async function getReference(key, language, fetcher, signal, cache) {
 }
 
 async function generateReply(input, { apiKey, model, fallbackModel, fetcher, referenceCache }, signal) {
+  const deadline = Date.now() + chatTimeoutMs;
   const references = (await Promise.all(input.keys.map(key => getReference(key, input.language, fetcher, signal, referenceCache))))
     .filter(Boolean);
   const requestGemini = async (targetModel, timeoutMs) => {
@@ -135,7 +136,9 @@ async function generateReply(input, { apiKey, model, fallbackModel, fetcher, ref
           }) }] }],
           generationConfig: {
             maxOutputTokens: 2500,
-            ...(targetModel === 'gemini-3.8-flash' ? { thinkingConfig: { thinkingLevel: 'low' } } : {}),
+            ...(targetModel === 'gemini-3.8-flash' ? { thinkingConfig: { thinkingLevel: 'low' } } :
+              ['gemini-3.6-flash', 'gemini-3.5-flash-lite', 'gemini-3.1-flash-lite'].includes(targetModel)
+                ? { thinkingConfig: { thinkingLevel: 'minimal' } } : {}),
             responseMimeType: 'application/json',
             responseSchema: {
               type: 'OBJECT',
@@ -165,7 +168,9 @@ async function generateReply(input, { apiKey, model, fallbackModel, fetcher, ref
     const targetModel = fallbackModel;
     console.warn(`[Gemini] ${error.message} Reintentando con ${targetModel}.`);
     await waitForRetry(500 + Math.floor(Math.random() * 250), undefined, { signal });
-    candidate = await requestGemini(targetModel, 10000);
+    // A fast 503 leaves almost the whole budget for the fallback. A slow first
+    // attempt leaves less. Reserve time to parse and return before Vercel ends.
+    candidate = await requestGemini(targetModel, Math.max(1, Math.min(24000, deadline - Date.now() - 1000)));
   }
   if (candidate?.finishReason === 'MAX_TOKENS') throw new GeminiReplyError('Google agotó el límite de tokens.');
   const output = candidate?.content?.parts?.filter(part => !part.thought).map(part => part.text ?? '').join('');
